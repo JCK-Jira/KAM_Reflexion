@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAM INC. — Ma réflexion du jour · 30/03/2026</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kamincmareflexiondujour.netlify.app">
+<meta property="og:title" content="📊 KAM INC. — Ma réflexion du jour · 30/03/2026">
+<meta property="og:description" content="Analyse intraday · GC #1 HAUSSIER · ES #2 BAISSIER · NQ #3 BAISSIER · RTY #4 BAISSIER · WTI #5 NEUTRE · 07H50 CET">
+<meta property="og:site_name" content="KAM INC.">
+<meta property="og:image" content="https://kamincmareflexiondujour.netlify.app/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="📊 KAM INC. — Ma réflexion du jour · 30/03/2026">
+<meta name="twitter:description" content="GC #1 HAUSSIER · ES #2 BAISSIER · NQ #3 BAISSIER · RTY #4 BAISSIER · WTI #5 NEUTRE · 07H50 CET">
+<meta name="theme-color" content="#0f1f4b">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f4b;--navy3:#1a2d6e;--gold2:#e2ba3f;--gold3:#f5d76e;
+  --paper:#fafbfd;--card:#ffffff;--surf:#f4f6fa;--surf2:#edf0f7;--bdr:#dde3ef;
+  --txt:#1a2236;--sub:#4a5878;--dim:#8494b2;
+  --mono:'DM Mono',monospace;--disp:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+}
+body{background:#0d1117;font-family:var(--body);color:var(--txt);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:32px 16px}
+.shell{max-width:740px;width:100%;border-radius:16px;overflow:hidden;border:1.5px solid var(--bdr);box-shadow:0 8px 48px #0f1f4b50}
+.masthead{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);position:relative;overflow:hidden}
+.masthead::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff07 0,#ffffff07 1px,transparent 1px,transparent 52px),repeating-linear-gradient(0deg,#ffffff07 0,#ffffff07 1px,transparent 1px,transparent 52px)}
+.mast-inner{position:relative;z-index:1;padding:18px 22px 14px;display:flex;align-items:flex-end;justify-content:space-between}
+.mast-label{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;opacity:.8;margin-bottom:7px}
+.mast-title{font-family:var(--disp);font-size:26px;font-weight:800;color:#ffffff;letter-spacing:-.01em;line-height:1}
+.mast-title span{color:var(--gold3)}
+.mast-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.mast-date{font-family:var(--mono);font-size:10px;color:#ffffff;opacity:.8;letter-spacing:.1em}
+.kam-badge{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--gold2);letter-spacing:.16em;border:1.5px solid #c9a22760;padding:3px 11px;border-radius:5px;background:#c9a22715}
+.nav-bar{position:relative;z-index:1;background:#0a1535;border-top:1px solid #ffffff15;padding:10px 14px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.nav-bar::-webkit-scrollbar{display:none}
+.tab{font-family:var(--mono);font-size:10px;font-weight:500;padding:7px 16px;border-radius:7px;border:1px solid #ffffff20;background:#ffffff0d;color:#ffffff70;cursor:pointer;letter-spacing:.1em;white-space:nowrap;transition:all .18s cubic-bezier(.4,0,.2,1);flex-shrink:0;outline:none;position:relative}
+.tab:hover{background:#ffffff1a;border-color:#ffffff35;color:#ffffffb0;transform:translateY(-1px)}
+.tab.on{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold3) 60%,var(--gold2) 100%);border:1.5px solid var(--gold3);color:var(--navy);font-weight:700;box-shadow:0 0 0 2px #e2ba3f30,0 0 14px #e2ba3f70,0 0 28px #f5d76e40,0 4px 12px #c9a22750;transform:translateY(-1px)}
+.tab.on::before{content:'';position:absolute;inset:0;border-radius:6px;background:linear-gradient(180deg,#ffffff50 0%,transparent 60%);pointer-events:none}
+.card{display:none;background:var(--paper)}
+.card.on{display:block;animation:rise .2s ease}
+@keyframes rise{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.a-stripe{padding:14px 18px 12px;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--bdr);background:var(--card);position:relative}
+.a-left{display:flex;align-items:center;gap:12px}
+.a-disc{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:13px;font-weight:800;flex-shrink:0}
+.a-name{font-family:var(--disp);font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1}
+.a-full{font-family:var(--mono);font-size:9px;color:var(--dim);margin-top:3px;letter-spacing:.05em}
+.a-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.a-cpl{font-family:var(--mono);font-size:22px;font-weight:500;line-height:1}
+.a-ts{font-size:9px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+.bias-chip{font-family:var(--body);font-size:10px;font-weight:600;padding:3px 11px;border-radius:20px;letter-spacing:.1em;border:1.5px solid;display:inline-flex;align-items:center;gap:4px}
+.rank-num{position:absolute;top:14px;right:18px;font-family:var(--disp);font-size:11px;color:var(--dim);font-weight:700}
+.mband{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surf);border-bottom:1px solid var(--bdr)}
+.mc{padding:9px 13px;border-right:1px solid var(--bdr)}
+.mc:last-child{border-right:none}
+.mc-l{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:4px}
+.mc-v{font-family:var(--mono);font-size:12px;font-weight:500;line-height:1.2}
+.mc-s{font-size:8.5px;color:var(--dim);margin-top:2px;font-family:var(--mono)}
+.sc-wrap{display:grid;grid-template-columns:1fr 1fr 1fr}
+.sc{padding:13px 13px 11px;border-right:1px solid var(--bdr)}
+.sc:last-child{border-right:none}
+.sc-hd{display:flex;align-items:center;gap:6px;margin-bottom:9px}
+.sc-pill{font-family:var(--mono);font-size:9px;font-weight:500;padding:2px 8px;border-radius:12px;letter-spacing:.06em;border:1px solid;flex-shrink:0}
+.sc-tag{margin-left:auto;font-size:8px;font-weight:600;letter-spacing:.08em;padding:2px 6px;border-radius:3px;border:1px solid}
+.mc-chart{width:100%;height:42px;border-radius:6px;overflow:hidden;margin-bottom:9px;display:block}
+.trg{border-radius:6px;padding:7px 10px;margin-bottom:8px;border:1.5px solid}
+.trg-l{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;opacity:.55;margin-bottom:3px}
+.trg-v{font-family:var(--mono);font-size:16px;font-weight:500;line-height:1}
+.trg-c{font-size:9px;opacity:.6;margin-top:3px;line-height:1.3}
+.tp-list{border-radius:5px;overflow:hidden;border:1px solid var(--bdr);margin-bottom:7px}
+.tp-row{display:flex;align-items:center;padding:4px 9px;border-bottom:1px solid var(--bdr);gap:7px}
+.tp-row:last-child{border-bottom:none}
+.tp-k{font-family:var(--mono);font-size:9px;font-weight:600;width:22px;flex-shrink:0}
+.tp-bar-w{flex:1;height:3px;border-radius:2px;background:var(--bdr);overflow:hidden}
+.tp-bar-f{height:100%;border-radius:2px}
+.tp-v{font-family:var(--mono);font-size:11px;font-weight:500;text-align:right}
+.sl{display:flex;align-items:center;justify-content:space-between;padding:5px 9px;border-radius:5px;border:1.5px solid}
+.sl-k{font-family:var(--mono);font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.sl-v{font-family:var(--mono);font-size:12px;font-weight:500}
+.rng-card{border-radius:6px;padding:8px 10px;margin-bottom:6px;border:1px solid var(--bdr);background:white;position:relative;overflow:hidden}
+.rng-k{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:4px}
+.rng-v{display:flex;align-items:center;justify-content:space-between}
+.rng-entry{font-family:var(--mono);font-size:13px;font-weight:500}
+.rng-sl{font-family:var(--mono);font-size:9px;color:var(--dim)}
+.rng-zone{background:var(--surf2);border-radius:5px;padding:6px 10px;border:1px solid var(--bdr);margin-bottom:8px;font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.04em}
+.ev-bar{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border-top:1px solid var(--bdr)}
+.ev-cell{padding:10px 16px;display:flex;align-items:center;gap:10px}
+.ev-cell:first-child{border-right:1px solid var(--bdr)}
+.ev-icon{width:30px;height:30px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:500;border:1.5px solid}
+.ev-l{font-size:9px;color:var(--dim);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.ev-v{font-family:var(--mono);font-size:15px;font-weight:500;margin-top:1px}
+.ev-s{font-family:var(--mono);font-size:9px;color:var(--dim);margin-top:1px}
+.ftr{padding:9px 18px;border-top:1px solid #ffffff15;background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.ftr-l{font-family:var(--mono);font-size:9px;color:#ffffff;opacity:.75;letter-spacing:.08em}
+.ftr-r{font-family:var(--mono);font-size:9px;color:#ffffff;opacity:.6;letter-spacing:.06em}
+.ftr-hi{color:var(--gold2);font-weight:600;opacity:1}
+@media(max-width:600px){.sc-wrap{grid-template-columns:1fr}.sc{border-right:none;border-bottom:1px solid var(--bdr)}.mband{grid-template-columns:1fr 1fr}.ev-bar{grid-template-columns:1fr}.ev-cell:first-child{border-right:none;border-bottom:1px solid var(--bdr)}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="masthead">
+    <div class="mast-inner">
+      <div>
+        <div class="mast-label">Analyse intraday · 30 mars 2026</div>
+        <div class="mast-title">Ma réflexion <span>du jour</span></div>
+      </div>
+      <div class="mast-right">
+        <div class="mast-date">07H50 CET</div>
+        <div class="kam-badge">KAM INC.</div>
+      </div>
+    </div>
+    <div class="nav-bar" id="tabs"></div>
+  </div>
+  <div id="cards"></div>
+</div>
+<script>
+const D=[
+  {id:'GC',rank:'#1',name:'GOLD',full:'Gold (GC) · G5MH6 0DTE',cpl:'4 549,9',bc:'g',bias:'HAUSSIER',
+   gamma:'G5MH6 4 525',pw:'4 500 / 4 450 / 4 400',cw:'4 600 / 4 700 / 4 750',pc:'0,53',vpc:'0,77',sig:'CALL DOM. EXTRÊME',delta:'OGK6 CHG +5 647',
+   s1:{trig:'>4 570',cond:'Au-dessus gamma pin G5MH6 4 525 (+24,9 pts)',tp1:'4 580',tp2:'4 589',tp3:'4 595',tp4:'4 600',sl:'< 4 500'},
+   s2:{trig:'<4 500',cond:'Cassure gamma pin G5MH6 · gamma négatif',tp1:'4 490',tp2:'4 475',tp3:'4 460',tp4:'4 450',sl:'> 4 570'},
+   s3:{lo:'4 525',hi:'4 570',eL:'4 525',slL:'SL < 4 510',eS:'4 570',slS:'SL > 4 590'},
+   evh:'4 600',evb:'4 450',rng:'4 450 — 4 600'},
+  {id:'ES',rank:'#2',name:'S&P 500',full:'S&P 500 (ES) · E5AH6 0DTE',cpl:'6 415,75',bc:'r',bias:'BAISSIER',
+   gamma:'E5AH6 6 400',pw:'6 300 / 6 200',cw:'6 500 / 6 550',pc:'2,57',vpc:'2,69',sig:'E5AH6 P/C 4,08 EXTRÊME',delta:'E5AH6 CHG +195 684',
+   s1:{trig:'>6 450',cond:'M5 > 6 415 · recapture VAL J-1',tp1:'6 470',tp2:'6 485',tp3:'6 495',tp4:'6 500',sl:'< 6 400'},
+   s2:{trig:'<6 400',cond:'Cassure gamma pin E5AH6 · extension',tp1:'6 375',tp2:'6 350',tp3:'6 325',tp4:'6 300',sl:'> 6 450'},
+   s3:{lo:'6 400',hi:'6 450',eL:'6 400',slL:'SL < 6 380',eS:'6 450',slS:'SL > 6 475'},
+   evh:'6 500',evb:'6 300',rng:'6 300 — 6 500'},
+  {id:'NQ',rank:'#3',name:'NASDAQ',full:'Nasdaq 100 (NQ) · Q5AH6 0DTE',cpl:'23 341,25',bc:'r',bias:'BAISSIER',
+   gamma:'Q5AH6 23 500',pw:'23 000 / 22 900',cw:'23 500 / 23 700',pc:'1,33',vpc:'1,04',sig:'Vol P/C 1,04 équilibré',delta:'Q5AH6 CHG +6 606',
+   s1:{trig:'>23 500',cond:'M5 > 23 341 · recapture gamma pin',tp1:'23 550',tp2:'23 620',tp3:'23 660',tp4:'23 700',sl:'< 23 340'},
+   s2:{trig:'<23 200',cond:'Cassure support · extension baissière',tp1:'23 100',tp2:'23 050',tp3:'23 020',tp4:'23 000',sl:'> 23 500'},
+   s3:{lo:'23 200',hi:'23 500',eL:'23 200',slL:'SL < 23 150',eS:'23 500',slS:'SL > 23 550'},
+   evh:'23 700',evb:'23 000',rng:'23 000 — 23 700'},
+  {id:'RTY',rank:'#4',name:'RUSSELL',full:'Russell 2000 (RTY) · R5AH6 0DTE',cpl:'2 466,6',bc:'r',bias:'BAISSIER',
+   gamma:'R5AH6 2 460',pw:'2 425 / 2 400',cw:'2 500 / 2 550',pc:'2,15',vpc:'0,98',sig:'Vol P/C 0,98 CONTRARIAN',delta:'R5AH6 CHG +2 120',
+   s1:{trig:'>2 500',cond:'Recapture VAL J-1 2 513',tp1:'2 505',tp2:'2 509',tp3:'2 511',tp4:'2 513',sl:'< 2 460'},
+   s2:{trig:'<2 450',cond:'Cassure gamma pin R5AH6 · extension',tp1:'2 440',tp2:'2 433',tp3:'2 428',tp4:'2 425',sl:'> 2 480'},
+   s3:{lo:'2 460',hi:'2 500',eL:'2 460',slL:'SL < 2 445',eS:'2 500',slS:'SL > 2 515'},
+   evh:'2 513',evb:'2 425',rng:'2 425 — 2 513'},
+  {id:'WTI',rank:'#5',name:'WTI OIL',full:'WTI Crude Oil (CL) · ML5H6',cpl:'100,86',bc:'a',bias:'NEUTRE',
+   gamma:'ML5H6 100,00',pw:'97,00 / 95,00',cw:'103,00 / 105,00',pc:'1,02',vpc:'0,68',sig:'Call-dominant contrarian',delta:'ML5H6 CHG +28 519',
+   s1:{trig:'>101,00',cond:'Cassure gamma pin ML5H6 100',tp1:'101,50',tp2:'102,00',tp3:'102,50',tp4:'103,00',sl:'< 98,50'},
+   s2:{trig:'<99,00',cond:'Cassure gamma pin ML5H6 · put wall',tp1:'98,50',tp2:'98,00',tp3:'97,50',tp4:'97,00',sl:'> 101,00'},
+   s3:{lo:'99,00',hi:'101,00',eL:'99,50',slL:'SL < 98,50',eS:'101,00',slS:'SL > 101,50'},
+   evh:'103,00',evb:'97,00',rng:'97,00 — 103,00'}
+];
+const P={
+  g:{fg:'#0f6b3a',mid:'#16a34a',light:'#dcfce7',bg:'#f0fdf4',bd:'#86efac',name:'#065f46'},
+  r:{fg:'#991b1b',mid:'#dc2626',light:'#fee2e2',bg:'#fef2f2',bd:'#fca5a5',name:'#9b1c1c'},
+  a:{fg:'#78350f',mid:'#d97706',light:'#fef3c7',bg:'#fffbeb',bd:'#fde68a',name:'#92400e'}
+};
+const gc=P.g,rc=P.r,ac=P.a;
+const discMap={GC:{bg:'#fefce8',c:'#92400e'},ES:{bg:'#fff0f0',c:'#991b1b'},NQ:{bg:'#eff6ff',c:'#1e40af'},RTY:{bg:'#f5f3ff',c:'#5b21b6'},WTI:{bg:'#fffbeb',c:'#78350f'}};
+function svgUp(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><path d="M0 36 C14 30 30 23 46 17 62 11 78 7 94 4 110 2 122 1 130 0" stroke="${p.mid}" stroke-width="2" fill="none"/><path d="M0 36 C14 30 30 23 46 17 62 11 78 7 94 4 110 2 122 1 130 0 L130 42 L0 42Z" fill="${p.mid}" opacity=".14"/><circle cx="130" cy="0" r="3" fill="${p.mid}"/></svg>`;}
+function svgDn(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><path d="M0 6 C14 12 30 19 46 25 62 31 78 35 94 38 110 40 122 41 130 42" stroke="${p.mid}" stroke-width="2" fill="none"/><path d="M0 6 C14 12 30 19 46 25 62 31 78 35 94 38 110 40 122 41 130 42 L130 0 L0 0Z" fill="${p.mid}" opacity=".14"/><circle cx="130" cy="42" r="3" fill="${p.mid}"/></svg>`;}
+function svgRng(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><rect x="0" y="9" width="130" height="24" fill="${p.mid}" opacity=".08"/><line x1="0" y1="9" x2="130" y2="9" stroke="${p.mid}" stroke-width=".8" stroke-dasharray="4 3" opacity=".4"/><line x1="0" y1="33" x2="130" y2="33" stroke="${p.mid}" stroke-width=".8" stroke-dasharray="4 3" opacity=".4"/><path d="M0 21 C8 13 14 31 22 21 30 11 36 31 44 21 52 11 58 31 66 21 74 11 80 31 88 21 96 11 102 31 110 21 118 13 124 23 130 21" stroke="${p.mid}" stroke-width="2" fill="none"/></svg>`;}
+function tpList(s,p){return`<div class="tp-list">${[['TP1',s.tp1,100],['TP2',s.tp2,72],['TP3',s.tp3,46],['TP4',s.tp4,26]].map(([k,v,w],i)=>`<div class="tp-row" style="background:${i%2?p.bg+'60':'white'}"><span class="tp-k" style="color:${p.mid}">${k}</span><div class="tp-bar-w"><div class="tp-bar-f" style="width:${w}%;background:${p.mid};opacity:.5"></div></div><span class="tp-v" style="color:${p.fg}">${v}</span></div>`).join('')}</div>`;}
+function mkChart(d,p){return d.bc==='g'?svgUp(p):d.bc==='r'?svgDn(p):svgRng(p);}
+function mkCard(d){
+  const p=P[d.bc],dc=discMap[d.id];
+  const bA=d.bc==='g'?'▲':d.bc==='r'?'▼':'◆';
+  const s1p=gc,s2p=rc,s3p=ac;
+  return`<div class="card ${d.id==='GC'?'on':''}" id="card-${d.id}">
+  <div class="a-stripe">
+    <div class="a-left"><div class="a-disc" style="background:${dc.bg};color:${dc.c}">${d.id}</div>
+    <div><div class="a-name" style="color:${p.name}">${d.name}</div><div class="a-full">${d.full}</div></div></div>
+    <div class="a-right"><div class="a-cpl" style="color:${p.fg}">${d.cpl}</div><div class="a-ts">CPL · 30/03 · 07H50</div>
+    <span class="bias-chip" style="color:${p.fg};background:${p.light};border-color:${p.bd}">${bA} ${d.bias}</span></div>
+    <div class="rank-num">${d.rank}</div>
+  </div>
+  <div class="mband">
+    <div class="mc"><div class="mc-l">Gamma Pin</div><div class="mc-v" style="color:#7c3aed">${d.gamma}</div><div class="mc-s">aimantation</div></div>
+    <div class="mc"><div class="mc-l">Put Wall</div><div class="mc-v" style="color:${rc.fg}">${d.pw}</div><div class="mc-s">plancher</div></div>
+    <div class="mc"><div class="mc-l">Call Wall</div><div class="mc-v" style="color:${gc.fg}">${d.cw}</div><div class="mc-s">résistance</div></div>
+    <div class="mc"><div class="mc-l">P/C OI · Vol P/C</div><div class="mc-v" style="color:#1d4ed8">${d.pc} · ${d.vpc}</div><div class="mc-s" style="color:#7c3aed">${d.sig}</div></div>
+  </div>
+  <div class="sc-wrap">
+    <div class="sc" style="background:${s1p.bg}">
+      <div class="sc-hd"><span class="sc-pill" style="color:${s1p.fg};background:${s1p.light};border-color:${s1p.bd}">S1</span><span style="font-size:11px;font-weight:600;color:${s1p.fg};letter-spacing:.05em">HAUSSIER</span><span class="sc-tag" style="color:${s1p.fg};background:${s1p.light};border-color:${s1p.bd}">BUY-STOP</span></div>
+      ${svgUp(s1p)}
+      <div class="trg" style="background:white;border-color:${s1p.bd};color:${s1p.fg}"><div class="trg-l">Déclencheur</div><div class="trg-v">${d.s1.trig}</div><div class="trg-c">${d.s1.cond}</div></div>
+      ${tpList(d.s1,s1p)}
+      <div class="sl" style="background:${rc.light};border-color:${rc.bd};color:${rc.fg}"><span class="sl-k">Stop Loss</span><span class="sl-v">${d.s1.sl}</span></div>
+    </div>
+    <div class="sc" style="background:${s2p.bg}">
+      <div class="sc-hd"><span class="sc-pill" style="color:${s2p.fg};background:${s2p.light};border-color:${s2p.bd}">S2</span><span style="font-size:11px;font-weight:600;color:${s2p.fg};letter-spacing:.05em">BAISSIER</span><span class="sc-tag" style="color:${s2p.fg};background:${s2p.light};border-color:${s2p.bd}">SELL-STOP</span></div>
+      ${svgDn(s2p)}
+      <div class="trg" style="background:white;border-color:${s2p.bd};color:${s2p.fg}"><div class="trg-l">Déclencheur</div><div class="trg-v">${d.s2.trig}</div><div class="trg-c">${d.s2.cond}</div></div>
+      ${tpList(d.s2,s2p)}
+      <div class="sl" style="background:${gc.light};border-color:${gc.bd};color:${gc.fg}"><span class="sl-k">Stop Loss</span><span class="sl-v">${d.s2.sl}</span></div>
+    </div>
+    <div class="sc" style="background:${s3p.bg}">
+      <div class="sc-hd"><span class="sc-pill" style="color:${s3p.fg};background:${s3p.light};border-color:${s3p.bd}">S3</span><span style="font-size:11px;font-weight:600;color:${s3p.fg};letter-spacing:.05em">RANGE</span><span class="sc-tag" style="color:${s3p.fg};background:${s3p.light};border-color:${s3p.bd}">LIMITS</span></div>
+      ${svgRng(s3p)}
+      <div class="rng-zone">Zone · ${d.s3.lo} — ${d.s3.hi}</div>
+      <div class="rng-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${gc.mid}"></div><div class="rng-k">Long · bas de range</div><div class="rng-v"><span class="rng-entry" style="color:${gc.fg}">${d.s3.eL}</span><span class="rng-sl">${d.s3.slL}</span></div></div>
+      <div class="rng-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${rc.mid}"></div><div class="rng-k">Short · haut de range</div><div class="rng-v"><span class="rng-entry" style="color:${rc.fg}">${d.s3.eS}</span><span class="rng-sl">${d.s3.slS}</span></div></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;background:white;border-radius:6px;padding:7px 10px;border:1px solid var(--bdr)">
+        <div><div style="font-size:8px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px">EV Haussier</div><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${gc.fg}">${d.evh}</span></div>
+        <div style="width:1px;height:28px;background:var(--bdr)"></div>
+        <div style="text-align:right"><div style="font-size:8px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px">EV Baissier</div><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${rc.fg}">${d.evb}</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ev-bar">
+    <div class="ev-cell"><div class="ev-icon" style="background:${gc.light};color:${gc.fg};border-color:${gc.bd}">EV+</div><div><div class="ev-l">Espérance haussière</div><div class="ev-v" style="color:${gc.fg}">${d.evh}</div><div class="ev-s">Range prévis. ${d.rng}</div></div></div>
+    <div class="ev-cell"><div class="ev-icon" style="background:${rc.light};color:${rc.fg};border-color:${rc.bd}">EV−</div><div><div class="ev-l">Espérance baissière</div><div class="ev-v" style="color:${rc.fg}">${d.evb}</div><div class="ev-s">Δ vs J-1 · ${d.delta}</div></div></div>
+  </div>
+  <div class="ftr">
+    <span class="ftr-l"><span class="ftr-hi">KAM INC.</span> · 30/03/2026 · 07H50 · ${d.rank} ${d.id} · CONFIDENTIEL</span>
+    <span class="ftr-r">50% TP1 / 50% TP2 · BE dès TP1</span>
+  </div>
+</div>`;
+}
+const tabs=document.getElementById('tabs'),cardsDiv=document.getElementById('cards');
+D.forEach(d=>{
+  const t=document.createElement('button');
+  t.className='tab'+(d.id==='GC'?' on':'');
+  t.innerHTML=`${d.rank}&nbsp;${d.id}`;
+  t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.card').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById('card-'+d.id).classList.add('on');};
+  tabs.appendChild(t);cardsDiv.innerHTML+=mkCard(d);
+});
+</script>
+</body>
+</html>

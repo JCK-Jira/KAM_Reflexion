@@ -1,0 +1,6 @@
+[[headers]]
+  for = "/preview.png"
+  [headers.values]
+    Content-Type = "image/png"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=3600"
