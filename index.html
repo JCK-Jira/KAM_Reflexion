@@ -2,233 +2,629 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KAM INC. — Ma réflexion du jour · 30/03/2026</title>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://kamincmareflexiondujour.netlify.app">
-<meta property="og:title" content="📊 KAM INC. — Ma réflexion du jour · 30/03/2026">
-<meta property="og:description" content="Analyse intraday · GC #1 HAUSSIER · ES #2 BAISSIER · NQ #3 BAISSIER · RTY #4 BAISSIER · WTI #5 NEUTRE · 07H50 CET">
-<meta property="og:site_name" content="KAM INC.">
-<meta property="og:image" content="https://kamincmareflexiondujour.netlify.app/preview.png">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="KAM INC. — Ma réflexion du jour · 31/03/2026">
+<meta property="og:description" content="Analyse intraday · GC #1 HAUSSIER CT · ES #2 BAISSIER · NQ #3 BAISSIER · RTY #4 NEUTRE · WTI #5 HAUSSIER · 09H36 CET">
+<meta property="og:image" content="https://jck-jira.github.io/KAM_Reflexion/og-31032026.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/png">
+<meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="📊 KAM INC. — Ma réflexion du jour · 30/03/2026">
-<meta name="twitter:description" content="GC #1 HAUSSIER · ES #2 BAISSIER · NQ #3 BAISSIER · RTY #4 BAISSIER · WTI #5 NEUTRE · 07H50 CET">
-<meta name="theme-color" content="#0f1f4b">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="twitter:image" content="https://jck-jira.github.io/KAM_Reflexion/og-31032026.png">
+<title>KAM INC. — Ma réflexion du jour · 31/03/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0f1f4b;--navy3:#1a2d6e;--gold2:#e2ba3f;--gold3:#f5d76e;
-  --paper:#fafbfd;--card:#ffffff;--surf:#f4f6fa;--surf2:#edf0f7;--bdr:#dde3ef;
-  --txt:#1a2236;--sub:#4a5878;--dim:#8494b2;
-  --mono:'DM Mono',monospace;--disp:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+  --bg:#0b0f1e;--bg2:#111827;--bg3:#141c2e;--bg4:#0d1526;
+  --border:#1e2a42;--border2:#243047;
+  --gold:#c9a227;--gold2:#e8b931;
+  --green:#22c55e;--green-bg:#052e16;--green-dim:#4ade80;
+  --red:#ef4444;--red-bg:#2d0707;--red-dim:#fca5a5;
+  --amber:#f59e0b;--amber-bg:#1c1105;--amber-dim:#fbbf24;
+  --blue:#60a5fa;--blue-dim:#93c5fd;
+  --text:#e2e8f0;--muted:#4b5e7e;--sub:#6b7fa0;
 }
-body{background:#0d1117;font-family:var(--body);color:var(--txt);min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:32px 16px}
-.shell{max-width:740px;width:100%;border-radius:16px;overflow:hidden;border:1.5px solid var(--bdr);box-shadow:0 8px 48px #0f1f4b50}
-.masthead{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);position:relative;overflow:hidden}
-.masthead::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff07 0,#ffffff07 1px,transparent 1px,transparent 52px),repeating-linear-gradient(0deg,#ffffff07 0,#ffffff07 1px,transparent 1px,transparent 52px)}
-.mast-inner{position:relative;z-index:1;padding:18px 22px 14px;display:flex;align-items:flex-end;justify-content:space-between}
-.mast-label{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;opacity:.8;margin-bottom:7px}
-.mast-title{font-family:var(--disp);font-size:26px;font-weight:800;color:#ffffff;letter-spacing:-.01em;line-height:1}
-.mast-title span{color:var(--gold3)}
-.mast-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
-.mast-date{font-family:var(--mono);font-size:10px;color:#ffffff;opacity:.8;letter-spacing:.1em}
-.kam-badge{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--gold2);letter-spacing:.16em;border:1.5px solid #c9a22760;padding:3px 11px;border-radius:5px;background:#c9a22715}
-.nav-bar{position:relative;z-index:1;background:#0a1535;border-top:1px solid #ffffff15;padding:10px 14px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center}
-.nav-bar::-webkit-scrollbar{display:none}
-.tab{font-family:var(--mono);font-size:10px;font-weight:500;padding:7px 16px;border-radius:7px;border:1px solid #ffffff20;background:#ffffff0d;color:#ffffff70;cursor:pointer;letter-spacing:.1em;white-space:nowrap;transition:all .18s cubic-bezier(.4,0,.2,1);flex-shrink:0;outline:none;position:relative}
-.tab:hover{background:#ffffff1a;border-color:#ffffff35;color:#ffffffb0;transform:translateY(-1px)}
-.tab.on{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold3) 60%,var(--gold2) 100%);border:1.5px solid var(--gold3);color:var(--navy);font-weight:700;box-shadow:0 0 0 2px #e2ba3f30,0 0 14px #e2ba3f70,0 0 28px #f5d76e40,0 4px 12px #c9a22750;transform:translateY(-1px)}
-.tab.on::before{content:'';position:absolute;inset:0;border-radius:6px;background:linear-gradient(180deg,#ffffff50 0%,transparent 60%);pointer-events:none}
-.card{display:none;background:var(--paper)}
-.card.on{display:block;animation:rise .2s ease}
-@keyframes rise{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.a-stripe{padding:14px 18px 12px;display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--bdr);background:var(--card);position:relative}
-.a-left{display:flex;align-items:center;gap:12px}
-.a-disc{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:13px;font-weight:800;flex-shrink:0}
-.a-name{font-family:var(--disp);font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1}
-.a-full{font-family:var(--mono);font-size:9px;color:var(--dim);margin-top:3px;letter-spacing:.05em}
-.a-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-.a-cpl{font-family:var(--mono);font-size:22px;font-weight:500;line-height:1}
-.a-ts{font-size:9px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
-.bias-chip{font-family:var(--body);font-size:10px;font-weight:600;padding:3px 11px;border-radius:20px;letter-spacing:.1em;border:1.5px solid;display:inline-flex;align-items:center;gap:4px}
-.rank-num{position:absolute;top:14px;right:18px;font-family:var(--disp);font-size:11px;color:var(--dim);font-weight:700}
-.mband{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--surf);border-bottom:1px solid var(--bdr)}
-.mc{padding:9px 13px;border-right:1px solid var(--bdr)}
-.mc:last-child{border-right:none}
-.mc-l{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:4px}
-.mc-v{font-family:var(--mono);font-size:12px;font-weight:500;line-height:1.2}
-.mc-s{font-size:8.5px;color:var(--dim);margin-top:2px;font-family:var(--mono)}
-.sc-wrap{display:grid;grid-template-columns:1fr 1fr 1fr}
-.sc{padding:13px 13px 11px;border-right:1px solid var(--bdr)}
-.sc:last-child{border-right:none}
-.sc-hd{display:flex;align-items:center;gap:6px;margin-bottom:9px}
-.sc-pill{font-family:var(--mono);font-size:9px;font-weight:500;padding:2px 8px;border-radius:12px;letter-spacing:.06em;border:1px solid;flex-shrink:0}
-.sc-tag{margin-left:auto;font-size:8px;font-weight:600;letter-spacing:.08em;padding:2px 6px;border-radius:3px;border:1px solid}
-.mc-chart{width:100%;height:42px;border-radius:6px;overflow:hidden;margin-bottom:9px;display:block}
-.trg{border-radius:6px;padding:7px 10px;margin-bottom:8px;border:1.5px solid}
-.trg-l{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;opacity:.55;margin-bottom:3px}
-.trg-v{font-family:var(--mono);font-size:16px;font-weight:500;line-height:1}
-.trg-c{font-size:9px;opacity:.6;margin-top:3px;line-height:1.3}
-.tp-list{border-radius:5px;overflow:hidden;border:1px solid var(--bdr);margin-bottom:7px}
-.tp-row{display:flex;align-items:center;padding:4px 9px;border-bottom:1px solid var(--bdr);gap:7px}
-.tp-row:last-child{border-bottom:none}
-.tp-k{font-family:var(--mono);font-size:9px;font-weight:600;width:22px;flex-shrink:0}
-.tp-bar-w{flex:1;height:3px;border-radius:2px;background:var(--bdr);overflow:hidden}
-.tp-bar-f{height:100%;border-radius:2px}
-.tp-v{font-family:var(--mono);font-size:11px;font-weight:500;text-align:right}
-.sl{display:flex;align-items:center;justify-content:space-between;padding:5px 9px;border-radius:5px;border:1.5px solid}
-.sl-k{font-family:var(--mono);font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-.sl-v{font-family:var(--mono);font-size:12px;font-weight:500}
-.rng-card{border-radius:6px;padding:8px 10px;margin-bottom:6px;border:1px solid var(--bdr);background:white;position:relative;overflow:hidden}
-.rng-k{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:4px}
-.rng-v{display:flex;align-items:center;justify-content:space-between}
-.rng-entry{font-family:var(--mono);font-size:13px;font-weight:500}
-.rng-sl{font-family:var(--mono);font-size:9px;color:var(--dim)}
-.rng-zone{background:var(--surf2);border-radius:5px;padding:6px 10px;border:1px solid var(--bdr);margin-bottom:8px;font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.04em}
-.ev-bar{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border-top:1px solid var(--bdr)}
-.ev-cell{padding:10px 16px;display:flex;align-items:center;gap:10px}
-.ev-cell:first-child{border-right:1px solid var(--bdr)}
-.ev-icon{width:30px;height:30px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:500;border:1.5px solid}
-.ev-l{font-size:9px;color:var(--dim);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.ev-v{font-family:var(--mono);font-size:15px;font-weight:500;margin-top:1px}
-.ev-s{font-family:var(--mono);font-size:9px;color:var(--dim);margin-top:1px}
-.ftr{padding:9px 18px;border-top:1px solid #ffffff15;background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
-.ftr-l{font-family:var(--mono);font-size:9px;color:#ffffff;opacity:.75;letter-spacing:.08em}
-.ftr-r{font-family:var(--mono);font-size:9px;color:#ffffff;opacity:.6;letter-spacing:.06em}
-.ftr-hi{color:var(--gold2);font-weight:600;opacity:1}
-@media(max-width:600px){.sc-wrap{grid-template-columns:1fr}.sc{border-right:none;border-bottom:1px solid var(--bdr)}.mband{grid-template-columns:1fr 1fr}.ev-bar{grid-template-columns:1fr}.ev-cell:first-child{border-right:none;border-bottom:1px solid var(--bdr)}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* HEADER */
+.header{background:var(--bg4);border-bottom:1px solid var(--border);padding:16px 28px 0}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.header-left .meta{font-size:11px;color:var(--muted);letter-spacing:.5px;font-weight:400;margin-bottom:6px}
+.title{display:flex;gap:10px;align-items:baseline}
+.title h1{font-size:28px;font-weight:600;color:var(--text);line-height:1}
+.title h1 span{color:var(--gold)}
+.kam-badge{
+  background:transparent;border:1px solid var(--gold);
+  padding:4px 12px;font-size:11px;font-weight:600;
+  color:var(--gold);letter-spacing:1.2px;
+  display:flex;align-items:center;gap:6px;
+}
+.time-badge{font-size:12px;color:var(--sub);text-align:right}
+
+/* TABS */
+.tabs{display:flex;gap:6px;padding-bottom:0}
+.tab{
+  padding:8px 16px;font-size:12px;font-weight:500;letter-spacing:.3px;
+  border:1px solid var(--border);border-bottom:none;
+  cursor:pointer;color:var(--muted);background:var(--bg);
+  border-radius:6px 6px 0 0;transition:.15s;user-select:none;
+}
+.tab:hover{color:var(--text)}
+.tab.active.bull{background:var(--green-bg);border-color:var(--green);color:var(--green-dim)}
+.tab.active.bear{background:var(--red-bg);border-color:var(--red);color:var(--red-dim)}
+.tab.active.neut{background:var(--amber-bg);border-color:var(--amber);color:var(--amber-dim)}
+
+/* MAIN */
+main{padding:20px 28px;max-width:1100px;margin:0 auto}
+.panel{display:none}.panel.active{display:block}
+
+/* Instrument header */
+.inst-header{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);
+}
+.inst-left{display:flex;gap:16px;align-items:center}
+.inst-icon{
+  width:48px;height:48px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:14px;letter-spacing:.5px;
+  border:1px solid var(--border2);background:var(--bg3);color:var(--sub);
+}
+.inst-info h2{font-size:24px;font-weight:700;margin-bottom:2px}
+.inst-info .sub{font-size:12px;color:var(--sub)}
+.inst-right{text-align:right}
+.cpl-big{font-size:38px;font-weight:700;color:var(--blue);line-height:1}
+.cpl-label{font-size:10px;color:var(--muted);letter-spacing:.5px;margin-bottom:4px}
+.biais-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 14px;border-radius:4px;font-size:12px;font-weight:600;letter-spacing:.3px;
+  margin-top:6px;border:1px solid;
+}
+.biais-badge.bull{background:var(--green-bg);color:var(--green-dim);border-color:var(--green)}
+.biais-badge.bear{background:var(--red-bg);color:var(--red-dim);border-color:var(--red)}
+.biais-badge.neut{background:var(--amber-bg);color:var(--amber-dim);border-color:var(--amber)}
+
+/* Options row */
+.options-row{
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;
+  margin-bottom:20px;
+}
+.opt-cell{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px}
+.opt-cell .label{font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-bottom:5px}
+.opt-cell .key-val{font-size:13px;font-weight:600;color:var(--blue-dim)}
+.opt-cell .hint{font-size:10px;color:var(--muted);margin-top:2px}
+.opt-cell.highlight-gold .key-val{color:var(--gold2)}
+.opt-cell.highlight-red .key-val{color:var(--red-dim)}
+
+/* Scenarios */
+.scenarios{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+.scenario{border-radius:8px;padding:14px;border:1px solid}
+.scenario.s1{background:var(--green-bg);border-color:#166534}
+.scenario.s2{background:var(--red-bg);border-color:#7f1d1d}
+.scenario.s3{background:#141004;border-color:#713f12}
+
+.sc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.sc-label{display:flex;align-items:center;gap:8px}
+.sc-num{
+  width:22px;height:22px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;
+}
+.s1 .sc-num{background:#166534;color:var(--green-dim)}
+.s2 .sc-num{background:#7f1d1d;color:var(--red-dim)}
+.s3 .sc-num{background:#713f12;color:var(--amber-dim)}
+.sc-title{font-size:13px;font-weight:600}
+.s1 .sc-title{color:var(--green-dim)}
+.s2 .sc-title{color:var(--red-dim)}
+.s3 .sc-title{color:var(--amber-dim)}
+.sc-type-pill{
+  font-size:9px;font-weight:700;letter-spacing:.8px;padding:2px 8px;border-radius:3px;
+}
+.s1 .sc-type-pill{background:#166534;color:#86efac}
+.s2 .sc-type-pill{background:#7f1d1d;color:#fca5a5}
+.s3 .sc-type-pill{background:#713f12;color:#fde68a}
+
+.sc-trigger{
+  font-size:11px;color:var(--muted);margin-bottom:10px;padding:6px 8px;
+  border-radius:4px;background:rgba(0,0,0,.2);
+}
+.sc-trigger strong{font-size:16px;font-weight:700;display:block;margin-bottom:2px}
+.s1 .sc-trigger strong{color:var(--green-dim)}
+.s2 .sc-trigger strong{color:var(--red-dim)}
+.s3 .sc-trigger strong{color:var(--amber-dim)}
+
+.tp-rows{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.tp-row{display:flex;align-items:center;gap:8px}
+.tp-label{font-size:10px;font-weight:600;min-width:28px;color:var(--sub)}
+.tp-bar-wrap{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden}
+.tp-bar{height:100%;border-radius:2px;transition:.3s}
+.s1 .tp-bar{background:linear-gradient(90deg,#166534,var(--green))}
+.s2 .tp-bar{background:linear-gradient(90deg,#7f1d1d,var(--red))}
+.s3 .tp-bar{background:linear-gradient(90deg,#713f12,var(--amber))}
+.tp-val{font-size:12px;font-weight:600;min-width:70px;text-align:right}
+.s1 .tp-val{color:var(--green-dim)}
+.s2 .tp-val{color:var(--red-dim)}
+.s3 .tp-val{color:var(--amber-dim)}
+
+.sl-row{
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(0,0,0,.25);border-radius:4px;padding:6px 10px;
+  font-size:11px;font-weight:600;
+}
+.s1 .sl-row{color:#f87171}
+.s2 .sl-row{color:#4ade80}
+.s3 .sl-row{color:var(--muted)}
+
+/* EV row */
+.ev-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;
+}
+.ev-cell{
+  background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:14px 18px;display:flex;justify-content:space-between;align-items:center;
+}
+.ev-cell .ev-label{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px;margin-bottom:4px}
+.ev-cell .ev-pill{
+  font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:3px;margin-bottom:6px;display:inline-block;
+}
+.ev-cell.up .ev-pill{background:#052e16;color:#4ade80}
+.ev-cell.dn .ev-pill{background:#2d0707;color:#fca5a5}
+.ev-cell .ev-val{font-size:28px;font-weight:700}
+.ev-cell.up .ev-val{color:var(--green-dim)}
+.ev-cell.dn .ev-val{color:var(--red-dim)}
+.ev-cell .ev-sub{font-size:10px;color:var(--muted)}
+
+/* FOOTER */
+footer{
+  background:var(--bg4);border-top:1px solid var(--border);
+  padding:10px 28px;display:flex;justify-content:space-between;align-items:center;
+  font-size:10px;color:var(--muted);letter-spacing:.4px;
+}
 </style>
 </head>
 <body>
-<div class="shell">
-  <div class="masthead">
-    <div class="mast-inner">
-      <div>
-        <div class="mast-label">Analyse intraday · 30 mars 2026</div>
-        <div class="mast-title">Ma réflexion <span>du jour</span></div>
-      </div>
-      <div class="mast-right">
-        <div class="mast-date">07H50 CET</div>
-        <div class="kam-badge">KAM INC.</div>
-      </div>
+
+<div class="header">
+  <div class="header-top">
+    <div class="header-left">
+      <div class="meta">ANALYSE INTRADAY · 31 MARS 2026</div>
+      <div class="title"><h1>Ma réflexion <span>du jour</span></h1></div>
     </div>
-    <div class="nav-bar" id="tabs"></div>
+    <div>
+      <div class="time-badge">09H36 CET</div>
+      <div class="kam-badge">🏛 KAM INC.</div>
+    </div>
   </div>
-  <div id="cards"></div>
+  <div class="tabs">
+    <div class="tab active bull" onclick="show(0)"><b>#1 GC</b></div>
+    <div class="tab bear" onclick="show(1)">#2 ES</div>
+    <div class="tab bear" onclick="show(2)">#3 NQ</div>
+    <div class="tab neut" onclick="show(3)">#4 RTY</div>
+    <div class="tab bull" onclick="show(4)">#5 WTI</div>
+  </div>
 </div>
-<script>
-const D=[
-  {id:'GC',rank:'#1',name:'GOLD',full:'Gold (GC) · G5MH6 0DTE',cpl:'4 549,9',bc:'g',bias:'HAUSSIER',
-   gamma:'G5MH6 4 525',pw:'4 500 / 4 450 / 4 400',cw:'4 600 / 4 700 / 4 750',pc:'0,53',vpc:'0,77',sig:'CALL DOM. EXTRÊME',delta:'OGK6 CHG +5 647',
-   s1:{trig:'>4 570',cond:'Au-dessus gamma pin G5MH6 4 525 (+24,9 pts)',tp1:'4 580',tp2:'4 589',tp3:'4 595',tp4:'4 600',sl:'< 4 500'},
-   s2:{trig:'<4 500',cond:'Cassure gamma pin G5MH6 · gamma négatif',tp1:'4 490',tp2:'4 475',tp3:'4 460',tp4:'4 450',sl:'> 4 570'},
-   s3:{lo:'4 525',hi:'4 570',eL:'4 525',slL:'SL < 4 510',eS:'4 570',slS:'SL > 4 590'},
-   evh:'4 600',evb:'4 450',rng:'4 450 — 4 600'},
-  {id:'ES',rank:'#2',name:'S&P 500',full:'S&P 500 (ES) · E5AH6 0DTE',cpl:'6 415,75',bc:'r',bias:'BAISSIER',
-   gamma:'E5AH6 6 400',pw:'6 300 / 6 200',cw:'6 500 / 6 550',pc:'2,57',vpc:'2,69',sig:'E5AH6 P/C 4,08 EXTRÊME',delta:'E5AH6 CHG +195 684',
-   s1:{trig:'>6 450',cond:'M5 > 6 415 · recapture VAL J-1',tp1:'6 470',tp2:'6 485',tp3:'6 495',tp4:'6 500',sl:'< 6 400'},
-   s2:{trig:'<6 400',cond:'Cassure gamma pin E5AH6 · extension',tp1:'6 375',tp2:'6 350',tp3:'6 325',tp4:'6 300',sl:'> 6 450'},
-   s3:{lo:'6 400',hi:'6 450',eL:'6 400',slL:'SL < 6 380',eS:'6 450',slS:'SL > 6 475'},
-   evh:'6 500',evb:'6 300',rng:'6 300 — 6 500'},
-  {id:'NQ',rank:'#3',name:'NASDAQ',full:'Nasdaq 100 (NQ) · Q5AH6 0DTE',cpl:'23 341,25',bc:'r',bias:'BAISSIER',
-   gamma:'Q5AH6 23 500',pw:'23 000 / 22 900',cw:'23 500 / 23 700',pc:'1,33',vpc:'1,04',sig:'Vol P/C 1,04 équilibré',delta:'Q5AH6 CHG +6 606',
-   s1:{trig:'>23 500',cond:'M5 > 23 341 · recapture gamma pin',tp1:'23 550',tp2:'23 620',tp3:'23 660',tp4:'23 700',sl:'< 23 340'},
-   s2:{trig:'<23 200',cond:'Cassure support · extension baissière',tp1:'23 100',tp2:'23 050',tp3:'23 020',tp4:'23 000',sl:'> 23 500'},
-   s3:{lo:'23 200',hi:'23 500',eL:'23 200',slL:'SL < 23 150',eS:'23 500',slS:'SL > 23 550'},
-   evh:'23 700',evb:'23 000',rng:'23 000 — 23 700'},
-  {id:'RTY',rank:'#4',name:'RUSSELL',full:'Russell 2000 (RTY) · R5AH6 0DTE',cpl:'2 466,6',bc:'r',bias:'BAISSIER',
-   gamma:'R5AH6 2 460',pw:'2 425 / 2 400',cw:'2 500 / 2 550',pc:'2,15',vpc:'0,98',sig:'Vol P/C 0,98 CONTRARIAN',delta:'R5AH6 CHG +2 120',
-   s1:{trig:'>2 500',cond:'Recapture VAL J-1 2 513',tp1:'2 505',tp2:'2 509',tp3:'2 511',tp4:'2 513',sl:'< 2 460'},
-   s2:{trig:'<2 450',cond:'Cassure gamma pin R5AH6 · extension',tp1:'2 440',tp2:'2 433',tp3:'2 428',tp4:'2 425',sl:'> 2 480'},
-   s3:{lo:'2 460',hi:'2 500',eL:'2 460',slL:'SL < 2 445',eS:'2 500',slS:'SL > 2 515'},
-   evh:'2 513',evb:'2 425',rng:'2 425 — 2 513'},
-  {id:'WTI',rank:'#5',name:'WTI OIL',full:'WTI Crude Oil (CL) · ML5H6',cpl:'100,86',bc:'a',bias:'NEUTRE',
-   gamma:'ML5H6 100,00',pw:'97,00 / 95,00',cw:'103,00 / 105,00',pc:'1,02',vpc:'0,68',sig:'Call-dominant contrarian',delta:'ML5H6 CHG +28 519',
-   s1:{trig:'>101,00',cond:'Cassure gamma pin ML5H6 100',tp1:'101,50',tp2:'102,00',tp3:'102,50',tp4:'103,00',sl:'< 98,50'},
-   s2:{trig:'<99,00',cond:'Cassure gamma pin ML5H6 · put wall',tp1:'98,50',tp2:'98,00',tp3:'97,50',tp4:'97,00',sl:'> 101,00'},
-   s3:{lo:'99,00',hi:'101,00',eL:'99,50',slL:'SL < 98,50',eS:'101,00',slS:'SL > 101,50'},
-   evh:'103,00',evb:'97,00',rng:'97,00 — 103,00'}
-];
-const P={
-  g:{fg:'#0f6b3a',mid:'#16a34a',light:'#dcfce7',bg:'#f0fdf4',bd:'#86efac',name:'#065f46'},
-  r:{fg:'#991b1b',mid:'#dc2626',light:'#fee2e2',bg:'#fef2f2',bd:'#fca5a5',name:'#9b1c1c'},
-  a:{fg:'#78350f',mid:'#d97706',light:'#fef3c7',bg:'#fffbeb',bd:'#fde68a',name:'#92400e'}
-};
-const gc=P.g,rc=P.r,ac=P.a;
-const discMap={GC:{bg:'#fefce8',c:'#92400e'},ES:{bg:'#fff0f0',c:'#991b1b'},NQ:{bg:'#eff6ff',c:'#1e40af'},RTY:{bg:'#f5f3ff',c:'#5b21b6'},WTI:{bg:'#fffbeb',c:'#78350f'}};
-function svgUp(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><path d="M0 36 C14 30 30 23 46 17 62 11 78 7 94 4 110 2 122 1 130 0" stroke="${p.mid}" stroke-width="2" fill="none"/><path d="M0 36 C14 30 30 23 46 17 62 11 78 7 94 4 110 2 122 1 130 0 L130 42 L0 42Z" fill="${p.mid}" opacity=".14"/><circle cx="130" cy="0" r="3" fill="${p.mid}"/></svg>`;}
-function svgDn(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><path d="M0 6 C14 12 30 19 46 25 62 31 78 35 94 38 110 40 122 41 130 42" stroke="${p.mid}" stroke-width="2" fill="none"/><path d="M0 6 C14 12 30 19 46 25 62 31 78 35 94 38 110 40 122 41 130 42 L130 0 L0 0Z" fill="${p.mid}" opacity=".14"/><circle cx="130" cy="42" r="3" fill="${p.mid}"/></svg>`;}
-function svgRng(p){return`<svg class="mc-chart" viewBox="0 0 130 42" preserveAspectRatio="none" style="background:${p.bg}"><rect x="0" y="9" width="130" height="24" fill="${p.mid}" opacity=".08"/><line x1="0" y1="9" x2="130" y2="9" stroke="${p.mid}" stroke-width=".8" stroke-dasharray="4 3" opacity=".4"/><line x1="0" y1="33" x2="130" y2="33" stroke="${p.mid}" stroke-width=".8" stroke-dasharray="4 3" opacity=".4"/><path d="M0 21 C8 13 14 31 22 21 30 11 36 31 44 21 52 11 58 31 66 21 74 11 80 31 88 21 96 11 102 31 110 21 118 13 124 23 130 21" stroke="${p.mid}" stroke-width="2" fill="none"/></svg>`;}
-function tpList(s,p){return`<div class="tp-list">${[['TP1',s.tp1,100],['TP2',s.tp2,72],['TP3',s.tp3,46],['TP4',s.tp4,26]].map(([k,v,w],i)=>`<div class="tp-row" style="background:${i%2?p.bg+'60':'white'}"><span class="tp-k" style="color:${p.mid}">${k}</span><div class="tp-bar-w"><div class="tp-bar-f" style="width:${w}%;background:${p.mid};opacity:.5"></div></div><span class="tp-v" style="color:${p.fg}">${v}</span></div>`).join('')}</div>`;}
-function mkChart(d,p){return d.bc==='g'?svgUp(p):d.bc==='r'?svgDn(p):svgRng(p);}
-function mkCard(d){
-  const p=P[d.bc],dc=discMap[d.id];
-  const bA=d.bc==='g'?'▲':d.bc==='r'?'▼':'◆';
-  const s1p=gc,s2p=rc,s3p=ac;
-  return`<div class="card ${d.id==='GC'?'on':''}" id="card-${d.id}">
-  <div class="a-stripe">
-    <div class="a-left"><div class="a-disc" style="background:${dc.bg};color:${dc.c}">${d.id}</div>
-    <div><div class="a-name" style="color:${p.name}">${d.name}</div><div class="a-full">${d.full}</div></div></div>
-    <div class="a-right"><div class="a-cpl" style="color:${p.fg}">${d.cpl}</div><div class="a-ts">CPL · 30/03 · 07H50</div>
-    <span class="bias-chip" style="color:${p.fg};background:${p.light};border-color:${p.bd}">${bA} ${d.bias}</span></div>
-    <div class="rank-num">${d.rank}</div>
-  </div>
-  <div class="mband">
-    <div class="mc"><div class="mc-l">Gamma Pin</div><div class="mc-v" style="color:#7c3aed">${d.gamma}</div><div class="mc-s">aimantation</div></div>
-    <div class="mc"><div class="mc-l">Put Wall</div><div class="mc-v" style="color:${rc.fg}">${d.pw}</div><div class="mc-s">plancher</div></div>
-    <div class="mc"><div class="mc-l">Call Wall</div><div class="mc-v" style="color:${gc.fg}">${d.cw}</div><div class="mc-s">résistance</div></div>
-    <div class="mc"><div class="mc-l">P/C OI · Vol P/C</div><div class="mc-v" style="color:#1d4ed8">${d.pc} · ${d.vpc}</div><div class="mc-s" style="color:#7c3aed">${d.sig}</div></div>
-  </div>
-  <div class="sc-wrap">
-    <div class="sc" style="background:${s1p.bg}">
-      <div class="sc-hd"><span class="sc-pill" style="color:${s1p.fg};background:${s1p.light};border-color:${s1p.bd}">S1</span><span style="font-size:11px;font-weight:600;color:${s1p.fg};letter-spacing:.05em">HAUSSIER</span><span class="sc-tag" style="color:${s1p.fg};background:${s1p.light};border-color:${s1p.bd}">BUY-STOP</span></div>
-      ${svgUp(s1p)}
-      <div class="trg" style="background:white;border-color:${s1p.bd};color:${s1p.fg}"><div class="trg-l">Déclencheur</div><div class="trg-v">${d.s1.trig}</div><div class="trg-c">${d.s1.cond}</div></div>
-      ${tpList(d.s1,s1p)}
-      <div class="sl" style="background:${rc.light};border-color:${rc.bd};color:${rc.fg}"><span class="sl-k">Stop Loss</span><span class="sl-v">${d.s1.sl}</span></div>
-    </div>
-    <div class="sc" style="background:${s2p.bg}">
-      <div class="sc-hd"><span class="sc-pill" style="color:${s2p.fg};background:${s2p.light};border-color:${s2p.bd}">S2</span><span style="font-size:11px;font-weight:600;color:${s2p.fg};letter-spacing:.05em">BAISSIER</span><span class="sc-tag" style="color:${s2p.fg};background:${s2p.light};border-color:${s2p.bd}">SELL-STOP</span></div>
-      ${svgDn(s2p)}
-      <div class="trg" style="background:white;border-color:${s2p.bd};color:${s2p.fg}"><div class="trg-l">Déclencheur</div><div class="trg-v">${d.s2.trig}</div><div class="trg-c">${d.s2.cond}</div></div>
-      ${tpList(d.s2,s2p)}
-      <div class="sl" style="background:${gc.light};border-color:${gc.bd};color:${gc.fg}"><span class="sl-k">Stop Loss</span><span class="sl-v">${d.s2.sl}</span></div>
-    </div>
-    <div class="sc" style="background:${s3p.bg}">
-      <div class="sc-hd"><span class="sc-pill" style="color:${s3p.fg};background:${s3p.light};border-color:${s3p.bd}">S3</span><span style="font-size:11px;font-weight:600;color:${s3p.fg};letter-spacing:.05em">RANGE</span><span class="sc-tag" style="color:${s3p.fg};background:${s3p.light};border-color:${s3p.bd}">LIMITS</span></div>
-      ${svgRng(s3p)}
-      <div class="rng-zone">Zone · ${d.s3.lo} — ${d.s3.hi}</div>
-      <div class="rng-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${gc.mid}"></div><div class="rng-k">Long · bas de range</div><div class="rng-v"><span class="rng-entry" style="color:${gc.fg}">${d.s3.eL}</span><span class="rng-sl">${d.s3.slL}</span></div></div>
-      <div class="rng-card"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${rc.mid}"></div><div class="rng-k">Short · haut de range</div><div class="rng-v"><span class="rng-entry" style="color:${rc.fg}">${d.s3.eS}</span><span class="rng-sl">${d.s3.slS}</span></div></div>
-      <div style="display:flex;align-items:center;justify-content:space-between;background:white;border-radius:6px;padding:7px 10px;border:1px solid var(--bdr)">
-        <div><div style="font-size:8px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px">EV Haussier</div><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${gc.fg}">${d.evh}</span></div>
-        <div style="width:1px;height:28px;background:var(--bdr)"></div>
-        <div style="text-align:right"><div style="font-size:8px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px">EV Baissier</div><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${rc.fg}">${d.evb}</span></div>
+
+<main>
+
+<!-- ═══════════════ GC ═══════════════ -->
+<div class="panel active" id="p0">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">GC</div>
+      <div class="inst-info">
+        <h2>GOLD</h2>
+        <div class="sub">Gold (GC) · G5TH6 0DTE</div>
       </div>
     </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 31/03 · 09H36</div>
+      <div class="cpl-big">4 595,5</div>
+      <div class="biais-badge bull">▲ HAUSSIER CT</div>
+    </div>
   </div>
-  <div class="ev-bar">
-    <div class="ev-cell"><div class="ev-icon" style="background:${gc.light};color:${gc.fg};border-color:${gc.bd}">EV+</div><div><div class="ev-l">Espérance haussière</div><div class="ev-v" style="color:${gc.fg}">${d.evh}</div><div class="ev-s">Range prévis. ${d.rng}</div></div></div>
-    <div class="ev-cell"><div class="ev-icon" style="background:${rc.light};color:${rc.fg};border-color:${rc.bd}">EV−</div><div><div class="ev-l">Espérance baissière</div><div class="ev-v" style="color:${rc.fg}">${d.evb}</div><div class="ev-s">Δ vs J-1 · ${d.delta}</div></div></div>
+  <div class="options-row">
+    <div class="opt-cell highlight-gold">
+      <div class="label">Gamma Pin</div>
+      <div class="key-val">G5TH6 · 4 525</div>
+      <div class="hint">aimantation</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="key-val">4 500 / 4 450 / 4 400</div>
+      <div class="hint">plancher</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="key-val">4 680 / 4 750</div>
+      <div class="hint">résistance</div>
+    </div>
+    <div class="opt-cell highlight-gold">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="key-val">0,53 · 0,77</div>
+      <div class="hint">CALL DOM. EXTRÊME</div>
+    </div>
   </div>
-  <div class="ftr">
-    <span class="ftr-l"><span class="ftr-hi">KAM INC.</span> · 30/03/2026 · 07H50 · ${d.rank} ${d.id} · CONFIDENTIEL</span>
-    <span class="ftr-r">50% TP1 / 50% TP2 · BE dès TP1</span>
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-title">HAUSSIER</div></div><div class="sc-type-pill">BUY-STOP</div></div>
+      <div class="sc-trigger"><strong>&gt;4 680</strong>Au-dessus H session · buy-stop &gt;4 680</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">4 700</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">4 720</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">4 735</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 750 (EV H)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 4 650</span></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-title">BAISSIER</div></div><div class="sc-type-pill">SELL-STOP</div></div>
+      <div class="sc-trigger"><strong>&lt;4 541</strong>Cassure L session · gamma négatif</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">4 525</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">4 510</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">4 500</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 484 (VAL J-1)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 4 570</span></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-title">RANGE</div></div><div class="sc-type-pill">LIMITS</div></div>
+      <div class="sc-trigger"><strong>4 541 – 4 680</strong>Zone de consolidation · biais haussier</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 541 → 4 595</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">&lt; 4 510</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 640 → 4 570</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">&gt; 4 690</div></div>
+      </div>
+      <div class="sl-row" style="color:var(--sub)"><span>EV H → 4 750</span><span>EV B → 4 484</span></div>
+    </div>
   </div>
-</div>`;
+  <div class="ev-row">
+    <div class="ev-cell up">
+      <div><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-val">4 750</div><div class="ev-sub">Call wall · Range prévis. 4 541 – 4 680</div></div>
+    </div>
+    <div class="ev-cell dn">
+      <div><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-val">4 484</div><div class="ev-sub">VAL J-1 · OGK6 CHG +5 647</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ES ═══════════════ -->
+<div class="panel" id="p1">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">ES</div>
+      <div class="inst-info">
+        <h2>S&amp;P 500</h2>
+        <div class="sub">E-mini S&P 500 (ES) · EWH6 4DTE</div>
+      </div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 31/03 · 09H36</div>
+      <div class="cpl-big">6 449,00</div>
+      <div class="biais-badge bear">▼ BAISSIER STRUCTUREL</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell highlight-gold">
+      <div class="label">Gamma Pin</div>
+      <div class="key-val">EWH6 · 6 400</div>
+      <div class="hint">4DTE · aimantation</div>
+    </div>
+    <div class="opt-cell highlight-red">
+      <div class="label">Put Wall</div>
+      <div class="key-val">6 300 / 6 200</div>
+      <div class="hint">plancher</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="key-val">6 479 / 6 550</div>
+      <div class="hint">résistance</div>
+    </div>
+    <div class="opt-cell highlight-red">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="key-val">2,57 · 2,69</div>
+      <div class="hint">PUT DOM. EXTRÊME ⚠</div>
+    </div>
+  </div>
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-title">HAUSSIER</div></div><div class="sc-type-pill">BUY-STOP</div></div>
+      <div class="sc-trigger"><strong>&gt;6 479</strong>Breakout H session · recapture call wall</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">6 500</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">6 520</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">6 535</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">6 550 (EV H)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 6 449</span></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-title">BAISSIER</div></div><div class="sc-type-pill">SELL-STOP</div></div>
+      <div class="sc-trigger"><strong>&lt;6 371</strong>Cassure L session · gamma négatif</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">6 350</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:65%"></div></div><div class="tp-val">6 330</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:85%"></div></div><div class="tp-val">6 310</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">6 300 (EV B)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 6 400</span></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-title">RANGE</div></div><div class="sc-type-pill">LIMITS</div></div>
+      <div class="sc-trigger"><strong>6 371 – 6 479</strong>Consolidation · gamma pin 6 400 pivot</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">6 371 → 6 449</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 6 340</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">6 479 → 6 400</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 6 500</div></div>
+      </div>
+      <div class="sl-row" style="color:var(--sub)"><span>EV H → 6 550</span><span>EV B → 6 300</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-val">6 550</div><div class="ev-sub">Call wall · breakout &gt;6 479 requis</div></div></div>
+    <div class="ev-cell dn"><div><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-val">6 300</div><div class="ev-sub">Put wall · P/C OI 2,57 EXTRÊME ⚠</div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ NQ ═══════════════ -->
+<div class="panel" id="p2">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">NQ</div>
+      <div class="inst-info">
+        <h2>NASDAQ 100</h2>
+        <div class="sub">E-mini NASDAQ (NQ) · NEH6 0DTE</div>
+      </div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 31/03 · 09H36</div>
+      <div class="cpl-big">23 319,25</div>
+      <div class="biais-badge bear">▼ BAISSIER</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell highlight-gold">
+      <div class="label">Pivot Gamma</div>
+      <div class="key-val">NEH6 · 23 300</div>
+      <div class="hint">CPL +19,25 pts AU-DESSUS</div>
+    </div>
+    <div class="opt-cell highlight-red">
+      <div class="label">Put Wall</div>
+      <div class="key-val">22 962 / 23 000</div>
+      <div class="hint">L session · plancher</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="key-val">23 406 / 23 700</div>
+      <div class="hint">H session · résistance</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="key-val">1,33 · 1,04</div>
+      <div class="hint">NEH6 CHG +14 719 (0DTE)</div>
+    </div>
+  </div>
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-title">HAUSSIER</div></div><div class="sc-type-pill">BUY-STOP</div></div>
+      <div class="sc-trigger"><strong>&gt;23 406</strong>Breakout H session · recapture call wall</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">23 500</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">23 575</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:75%"></div></div><div class="tp-val">23 630</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">23 700 (EV H)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 23 300</span></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-title">BAISSIER</div></div><div class="sc-type-pill">SELL-STOP</div></div>
+      <div class="sc-trigger"><strong>&lt;22 962</strong>Cassure L session · gamma négatif actif</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">22 900</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">22 875</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">22 840</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">22 800 (EV B)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 23 100</span></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-title">RANGE</div></div><div class="sc-type-pill">LIMITS</div></div>
+      <div class="sc-trigger"><strong>22 962 – 23 406</strong>Consolidation · pivot 23 300</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">22 962 → 23 319</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 22 850</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">23 406 → 23 200</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 23 500</div></div>
+      </div>
+      <div class="sl-row" style="color:var(--sub)"><span>EV H → 23 700</span><span>EV B → 22 800</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-val">23 700</div><div class="ev-sub">Call wall · breakout &gt;23 406 requis</div></div></div>
+    <div class="ev-cell dn"><div><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-val">22 800</div><div class="ev-sub">Put wall · L session 22 962 = déjà testée</div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ RTY ═══════════════ -->
+<div class="panel" id="p3">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">RTY</div>
+      <div class="inst-info">
+        <h2>RUSSELL 2000</h2>
+        <div class="sub">E-mini Russell (RTY) · RTMH6 4DTE</div>
+      </div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 31/03 · 09H36</div>
+      <div class="cpl-big">2 463,8</div>
+      <div class="biais-badge neut">◆ NEUTRE</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell highlight-gold">
+      <div class="label">Gamma Pin</div>
+      <div class="key-val">RTMH6 · 2 450</div>
+      <div class="hint">CPL +13,8 pts AU-DESSUS</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="key-val">2 415 / 2 375</div>
+      <div class="hint">L session · plancher</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="key-val">2 480 / 2 513</div>
+      <div class="hint">H session · résistance</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="key-val">2,15 · 0,98</div>
+      <div class="hint">Vol P/C CONTRARIAN ↔</div>
+    </div>
+  </div>
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-title">HAUSSIER</div></div><div class="sc-type-pill">BUY-STOP</div></div>
+      <div class="sc-trigger"><strong>&gt;2 480</strong>Breakout H session · call wall</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:50%"></div></div><div class="tp-val">2 490</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:70%"></div></div><div class="tp-val">2 500</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:85%"></div></div><div class="tp-val">2 507</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 513 (EV H)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 2 450</span></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-title">BAISSIER</div></div><div class="sc-type-pill">SELL-STOP</div></div>
+      <div class="sc-trigger"><strong>&lt;2 415</strong>Cassure L session · put wall</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:45%"></div></div><div class="tp-val">2 405</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:65%"></div></div><div class="tp-val">2 395</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:85%"></div></div><div class="tp-val">2 385</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 375 (EV B)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 2 450</span></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-title">RANGE</div></div><div class="sc-type-pill">LIMITS</div></div>
+      <div class="sc-trigger"><strong>2 415 – 2 480</strong>Neutre · coïncé gamma pin 2 450</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 415 → 2 463</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 2 400</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 480 → 2 450</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 2 500</div></div>
+      </div>
+      <div class="sl-row" style="color:var(--sub)"><span>EV H → 2 513</span><span>EV B → 2 375</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-val">2 513</div><div class="ev-sub">Call wall · Vol P/C 0,98 contrarian acheteur</div></div></div>
+    <div class="ev-cell dn"><div><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-val">2 375</div><div class="ev-sub">Put wall · P/C OI 2,15 baissier dominant</div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ WTI ═══════════════ -->
+<div class="panel" id="p4">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">WTI</div>
+      <div class="inst-info">
+        <h2>CRUDE OIL</h2>
+        <div class="sub">WTI Crude Oil (CL) · ML1J6</div>
+      </div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 31/03 · 09H36</div>
+      <div class="cpl-big">102,35</div>
+      <div class="biais-badge bull">▲ HAUSSIER (faible)</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell highlight-gold">
+      <div class="label">Gamma Pin</div>
+      <div class="key-val">ML1J6 · 100</div>
+      <div class="hint">CPL +2,35 pts · L=101,97</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="key-val">97,00 / 95,00</div>
+      <div class="hint">plancher</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="key-val">103,50 / 107,00</div>
+      <div class="hint">résistance</div>
+    </div>
+    <div class="opt-cell highlight-gold">
+      <div class="label">Vol P/C</div>
+      <div class="key-val">0,68</div>
+      <div class="hint">CALL DOM. · P/C OI 1,02</div>
+    </div>
+  </div>
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-title">HAUSSIER</div></div><div class="sc-type-pill">BUY-STOP</div></div>
+      <div class="sc-trigger"><strong>&gt;103,50</strong>Long sur repli · gamma positif actif</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">104,00</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">105,50</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">106,50</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">107,00 (EV H)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 101,50</span></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-title">BAISSIER</div></div><div class="sc-type-pill">SELL-STOP</div></div>
+      <div class="sc-trigger"><strong>&lt;101,97</strong>Cassure L session 31/03 · gamma négatif</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">101,00</div></div>
+        <div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">100,00</div></div>
+        <div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">98,50</div></div>
+        <div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">97,00 (put wall)</div></div>
+      </div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 103,50</span></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-header"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-title">RANGE</div></div><div class="sc-type-pill">LIMITS</div></div>
+      <div class="sc-trigger"><strong>101,97 – 108,00</strong>Range session · biais haussier faible</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">101,97 → 105,00</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 101,50</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">108,00 → 105,00</div></div>
+        <div class="tp-row"><div class="tp-label" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 109,00</div></div>
+      </div>
+      <div class="sl-row" style="color:var(--sub)"><span>EV H → 107,00</span><span>EV B → 97,00</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-val">107,00</div><div class="ev-sub">Call wall · H session 108 déjà testée</div></div></div>
+    <div class="ev-cell dn"><div><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-val">97,00</div><div class="ev-sub">Put wall · L session 101,97 = seuil clé</div></div></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <span>KAM INC. · 31/03/2026 · 09H36 · CONFIDENTIEL</span>
+  <span>#1 GC · #2 ES · #3 NQ · #4 RTY · #5 WTI</span>
+  <span>50% TP1 / 50% TP2 · BE dès TP1</span>
+</footer>
+
+<script>
+const TYPES=['bull','bear','bear','neut','bull'];
+function show(n){
+  document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.classList.remove('active','bull','bear','neut');
+    if(i===n){t.classList.add('active',TYPES[i]);}
+  });
 }
-const tabs=document.getElementById('tabs'),cardsDiv=document.getElementById('cards');
-D.forEach(d=>{
-  const t=document.createElement('button');
-  t.className='tab'+(d.id==='GC'?' on':'');
-  t.innerHTML=`${d.rank}&nbsp;${d.id}`;
-  t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.card').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById('card-'+d.id).classList.add('on');};
-  tabs.appendChild(t);cardsDiv.innerHTML+=mkCard(d);
-});
 </script>
 </body>
 </html>
