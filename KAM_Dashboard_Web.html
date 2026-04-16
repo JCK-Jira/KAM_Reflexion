@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>KAM INC. — GAMMA DASHBOARD · 16/04/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════
+   KAM INC. — Bloomberg Terminal Gamma Dashboard
+   Palette : #080c14 navy-black · #ff8c00 orange KAM
+   ════════════════════════════════════════════════════ */
+:root {
+  --bg0:      #020509;
+  --bg1:      #060a12;
+  --bg2:      #0c1220;
+  --bg3:      #141c32;
+  --bg4:      #18203a;
+  --bg5:      #1c2640;
+  --border0:  #263060;
+  --border1:  #2e3c70;
+  --border2:  #3a4a80;
+
+  --gold:     #ffa000;
+  --gold2:    #ffb84d;
+  --gold3:    #ffc966;
+  --gold-dim: #7a4200;
+
+  --green:    #00ffaa;
+  --green2:   #00ff88;
+  --green3:   #a0ffcc;
+  --green-bg: #031a0e;
+  --green-dim:#014020;
+
+  --red:      #ff3347;
+  --red2:     #ff5c55;
+  --red3:     #ffc8c5;
+  --red-bg:   #1a0305;
+  --red-dim:  #4a080c;
+
+  --amber:    #ffbe00;
+  --amber2:   #ffdd44;
+  --cyan:     #22d3ff;
+  --cyan2:    #66ccff;
+  --purple:   #a78bfa;
+  --magenta:  #f472b6;
+
+  --text0:    #ffffff;
+  --text1:    #e0eeff;
+  --text2:    #a0b8d8;
+  --text3:    #3a4870;
+  --text4:    #1e2840;
+
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
+
+html { font-size: 14px; }
+
+body {
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  image-rendering: pixelated;
+  font-smooth: never;
+  background: var(--bg0);
+  color: var(--text1);
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Scanline effect Bloomberg-style */
+
+}
+
+/* ── TOPBAR ─────────────────────────────────────────── */
+.topbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0;
+  height: 36px;
+  background: var(--bg0);
+  border-bottom: 1px solid var(--gold-dim);
+  padding: 0 16px;
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar-brand {
+  display: flex; align-items: center; gap: 10px;
+  padding-right: 24px;
+  border-right: 1px solid var(--border0);
+}
+.topbar-brand .logo {
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  image-rendering: pixelated;
+  font-smooth: never;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.topbar-brand .separator {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold-dim);
+}
+.topbar-brand .sub {
+  font-size: 9px; color: #7a9ab8; letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.topbar-ticker {
+  display: flex; align-items: center; gap: 0;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.ticker-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 18px;
+  border-right: 1px solid #263060;
+  flex-shrink: 0;
+}
+.ticker-sym { font-size: 10px; font-weight: 600; color: var(--text2); letter-spacing: 1px; }
+.ticker-val { font-size: 12px; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; }
+.ticker-chg { font-size: 10px; font-variant-numeric: tabular-nums; }
+.ticker-chg.up { color: #00e87a; font-weight: 600; }
+.ticker-chg.dn { color: #ff7a74; font-weight: 600; }
+.topbar-meta {
+  display: flex; align-items: center; gap: 16px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border0);
+}
+.topbar-time {
+  font-size: 16px; font-weight: 400;
+  color: #ffffff; letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.topbar-date { font-size: 9px; color: #7a9ab8; letter-spacing: 1px; text-transform: uppercase; }
+.status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; } 50% { opacity:.4; }
+}
+
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: calc(100vh - 38px);
+  overflow: hidden;
+  gap: 0;
+}
+
+/* ── INSTRUMENTS BAR ─────────────────────────────────── */
+.instruments-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border0);
+  border-bottom: 1px solid var(--border0);
+  max-height: 108px;
+}
+
+.inst-card {
+  background: var(--bg1);
+  padding: 8px 16px 7px;
+  cursor: pointer;
+  transition: background .15s;
+  position: relative;
+  overflow: hidden;
+}
+.inst-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--border1);
+  transition: background .15s;
+}
+.inst-card.bull::before { background: var(--green); box-shadow: 0 0 12px var(--green); }
+.inst-card.bear::before { background: var(--red); box-shadow: 0 0 12px var(--red); }
+.inst-card.neut::before { background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+.inst-card:hover { background: var(--bg3); box-shadow: inset 0 0 0 1px rgba(255,149,0,.15); }
+
+.inst-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 8px;
+}
+.inst-sym {
+  font-size: 15px; font-weight: 700; color: #ffffff;
+  letter-spacing: .5px;
+}
+.inst-num {
+  font-size: 9px; color: #6a8ab0; letter-spacing: 1px;
+}
+.inst-name { font-size: 8px; color: var(--text1); letter-spacing: .5px; margin-bottom: 6px; }
+.inst-cpl {
+  font-size: 24px; font-weight: 700;
+  color: #66ccff;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.inst-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 4px;
+}
+.inst-biais {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  padding: 2px 8px; border-radius: 2px;
+  text-transform: uppercase;
+}
+.bull .inst-biais { background: var(--green-bg); color: #00ff88; border: 1px solid var(--green-dim); }
+.bear .inst-biais { background: var(--red-bg); color: #ff5c55; border: 1px solid var(--red-dim); }
+.neut .inst-biais { background: #1a1200; color: var(--amber2); border: 1px solid #3a2800; }
+
+.inst-gp { font-size: 9px; color: var(--text3); }
+.inst-gp span { color: #ffb830; font-weight: 600; }
+
+/* ── DASHBOARD GRID ──────────────────────────────────── */
+.dashboard {
+  display: grid;
+  grid-template-columns: 260px 1fr 280px;
+  grid-template-rows: 1fr;
+  gap: 1px;
+  background: var(--border0);
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── LEFT PANEL — NIVEAUX GAMMA ─────────────────────── */
+.panel-left {
+  background: var(--bg1);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.panel-header {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 14px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border0);
+  flex-shrink: 0;
+}
+.panel-header-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  color: var(--gold); text-transform: uppercase;
+}
+.panel-header-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--gold-dim); margin-left: auto;
+}
+
+/* Instrument selector tabs */
+.inst-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border0);
+  flex-shrink: 0;
+}
+.inst-tab {
+  flex: 1; padding: 4px 3px; text-align: center;
+  font-size: 9px; font-weight: 600; color: var(--text3);
+  cursor: pointer; letter-spacing: .5px;
+  border-bottom: 2px solid transparent;
+  transition: .1s;
+}
+.inst-tab.active { color: var(--gold); border-color: var(--gold); background: rgba(255,140,0,.04); }
+.inst-tab:hover { color: var(--text1); }
+
+/* Niveau rows */
+.levels-container { flex: 1; overflow-y: auto; padding: 8px 0; }
+.levels-container::-webkit-scrollbar { width: 2px; }
+.levels-container::-webkit-scrollbar-track { background: transparent; }
+.levels-container::-webkit-scrollbar-thumb { background: var(--border1); }
+
+.level-group { margin-bottom: 4px; }
+.level-group-label {
+  font-size: 8px; color: var(--text3); letter-spacing: 1.5px;
+  padding: 4px 14px 2px; text-transform: uppercase;
+}
+.level-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 5px 14px;
+  position: relative;
+  cursor: default;
+  transition: background .1s;
+}
+.level-row:hover { background: rgba(255,255,255,.02); }
+.level-row.cpl-marker {
+  background: rgba(55,150,255,.12);
+  border-left: 2px solid #66ccff;
+}
+.level-row.cpl-marker .level-name { color: #66ccff; font-weight: 700; }
+
+.level-name {
+  font-size: 9px; letter-spacing: .3px;
+  color: #9abcd8; min-width: 82px; font-weight: 500;
+}
+.level-name .tag {
+  font-size: 7px; padding: 0 4px; border-radius: 1px;
+  margin-left: 4px; vertical-align: middle;
+}
+.tag-green { background: var(--green-dim); color: var(--green2); }
+.tag-red   { background: var(--red-dim);   color: var(--red2); }
+.tag-gold  { background: #2a1800; color: var(--amber2); }
+
+.level-val {
+  font-size: 11px; font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text0);
+}
+.level-val.green { color: #00ff88; }
+.level-val.red   { color: #ff5c55; }
+.level-val.gold  { color: #ffbe00; }
+.level-val.cyan  { color: #66ccff; }
+.level-val.amber { color: #ffdd44; }
+
+.level-bar-wrap {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: transparent;
+}
+
+/* CPL indicator arrow */
+.cpl-arrow {
+  font-size: 8px; color: var(--cyan); margin-left: 6px;
+}
+
+/* ── CENTER — INSTRUMENTS DETAIL GRID ───────────────── */
+.panel-center {
+  background: var(--bg1);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* 5-column instrument summary table */
+.inst-grid {
+  flex: 1; overflow: hidden;
+}
+.inst-grid::-webkit-scrollbar { height: 2px; width: 2px; }
+.inst-grid::-webkit-scrollbar-thumb { background: var(--border1); }
+
+.inst-table {
+  width: 100%; border-collapse: collapse;
+}
+.inst-table th {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  color: var(--text3); text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border0);
+  text-align: right;
+  white-space: nowrap;
+}
+.inst-table th:first-child { text-align: left; min-width: 130px; }
+.inst-table th.active { color: var(--gold); }
+
+.inst-table td {
+  font-size: 11px; font-variant-numeric: tabular-nums;
+  padding: 4px 10px;
+  text-align: right;
+  border-bottom: 1px solid rgba(38,48,96,.8);
+  color: var(--text1);
+  white-space: nowrap;
+}
+.inst-table td:first-child {
+  text-align: left; color: #8fb8d8;
+  font-size: 9px; font-weight: 500; letter-spacing: .4px; letter-spacing: .5px; text-transform: uppercase;
+}
+.inst-table tr:hover td { background: rgba(255,255,255,.03); }
+
+.inst-table .section-row td {
+  background: #080e1c;
+  color: #ffaa00;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 2px 10px; font-weight: 800; color: #ffaa00 !important;
+  border-bottom: 1px solid var(--border0);
+}
+
+.val-green  { color: #00ff88 !important; font-weight: 600; }
+.val-red    { color: #ff5c55 !important; font-weight: 600; }
+.val-gold   { color: #ffbe00 !important; font-weight: 600; }
+.val-cyan   { color: #66ccff !important; font-weight: 600; }
+.val-amber  { color: #ffdd44 !important; font-weight: 600; }
+.val-text0  { color: #ffffff  !important; font-weight: 600; }
+.val-bull { color: #00ff88 !important; font-weight: 700; }
+.val-bear { color: #ff5c55 !important; font-weight: 700; }
+.val-neut { color: #ffdd44 !important; font-weight: 700; }
+
+/* Scénario pills dans la table */
+.pill {
+  display: inline-block; font-size: 7px; font-weight: 700;
+  padding: 1px 5px; border-radius: 1px;
+  letter-spacing: .5px; text-transform: uppercase;
+}
+.pill-green { background: var(--green-dim); color: var(--green2); }
+.pill-red   { background: var(--red-dim);   color: var(--red2); }
+.pill-amber { background: #1a1000; color: var(--amber2); border: 1px solid #3a2800; }
+
+/* ── RIGHT PANEL — SCÉNARIOS ─────────────────────────── */
+.panel-right {
+  background: var(--bg1);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.scenario-block {
+  flex: 1; padding: 9px 13px;
+  border-bottom: 1px solid var(--border0);
+  overflow: hidden;
+}
+.scenario-block:last-child { border-bottom: none; }
+
+.sc-title {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 8px;
+}
+.sc-num {
+  width: 16px; height: 16px; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8px; font-weight: 700;
+}
+.sc-num-1 { background: var(--green2); color: var(--bg0); }
+.sc-num-2 { background: var(--red2); color: var(--bg0); }
+.sc-num-3 { background: var(--amber); color: var(--bg0); }
+
+.sc-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.sc-1 .sc-label { color: #00ff88; }
+.sc-2 .sc-label { color: #ff5c55; }
+.sc-3 .sc-label { color: #ffdd44; }
+.sc-type { font-size: 7px; color: var(--text3); letter-spacing: 1px; text-transform: uppercase; margin-left: auto; }
+
+.sc-trigger {
+  font-size: 10px; color: var(--text1);
+  padding: 4px 9px; border-radius: 2px;
+  background: rgba(0,0,0,.5);
+  border-left: 2px solid;
+  margin-bottom: 6px;
+}
+.sc-1 .sc-trigger { border-color: var(--green); }
+.sc-2 .sc-trigger { border-color: var(--red); }
+.sc-3 .sc-trigger { border-color: var(--amber); }
+.sc-trigger strong {
+  display: block; font-size: 13px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 1px;
+}
+.sc-1 .sc-trigger strong { color: #00ff88; }
+.sc-2 .sc-trigger strong { color: #ff5c55; }
+.sc-3 .sc-trigger strong { color: #ffdd44; }
+
+.tp-row {
+  display: flex; align-items: center; gap: 5px;
+  margin-bottom: 3px;
+}
+.tp-lbl { font-size: 8px; color: var(--text2); width: 32px; letter-spacing: .5px; text-transform: uppercase; }
+.tp-bar { flex: 1; height: 2px; border-radius: 1px; background: rgba(255,255,255,.05); overflow: hidden; }
+.tp-fill { height: 100%; border-radius: 1px; }
+.sc-1 .tp-fill { background: linear-gradient(90deg, rgba(0,208,132,.2), var(--green2)); }
+.sc-2 .tp-fill { background: linear-gradient(90deg, rgba(255,70,85,.2), var(--red2)); }
+.sc-3 .tp-fill { background: linear-gradient(90deg, rgba(219,168,71,.2), var(--amber)); }
+.tp-val { font-size: 11px; font-variant-numeric: tabular-nums; width: 68px; text-align: right; font-weight: 500; }
+.sc-1 .tp-val { color: #00ff88; }
+.sc-2 .tp-val { color: #ff5c55; }
+.sc-3 .tp-val { color: #ffdd44; }
+
+.sl-line {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 8px; padding: 3px 7px; border-radius: 2px;
+  letter-spacing: .5px; text-transform: uppercase; margin-top: 3px;
+  border: 1px solid;
+}
+.sc-1 .sl-line { background: rgba(255,70,85,.06); color: var(--red2); border-color: rgba(255,70,85,.2); }
+.sc-2 .sl-line { background: rgba(0,208,132,.06); color: var(--green2); border-color: rgba(0,208,132,.2); }
+.sc-3 .sl-line { background: rgba(219,168,71,.06); color: var(--amber); border-color: rgba(219,168,71,.2); }
+
+/* ── BOTTOM STATUS BAR ───────────────────────────────── */
+.statusbar {
+  display: flex; align-items: center; gap: 0;
+  height: 24px;
+  background: var(--bg0);
+  border-top: 1px solid var(--gold-dim);
+  font-size: 8px; letter-spacing: .8px; text-transform: uppercase;
+  overflow: hidden;
+}
+.status-seg {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 12px; height: 100%;
+  border-right: 1px solid var(--border0);
+  color: var(--text3);
+  flex-shrink: 0;
+}
+.status-seg span { color: var(--text2); }
+.status-seg.gold span { color: var(--gold); }
+.status-seg.green span { color: var(--green2); }
+.status-seg.red span { color: var(--red2); }
+.status-fill { flex: 1; }
+.status-seg.right { border-right: none; border-left: 1px solid var(--border0); margin-left: auto; }
+
+
+.inst-table tbody tr:nth-child(even) td { background: rgba(255,255,255,.018); }
+.inst-table tbody tr:nth-child(odd) td  { background: transparent; }
+.inst-table .section-row:nth-child(even) td,
+.inst-table .section-row:nth-child(odd) td { background: #080e1c !important; }
+
+/* ── MINI SPARKLINE SVG ──────────────────────────────── */
+.sparkline { display: block; }
+
+/* ── ZONE INDICATOR ──────────────────────────────────── */
+.zone-badge {
+  display: inline-block; font-size: 8px; font-weight: 600;
+  padding: 1px 6px; border-radius: 2px; letter-spacing: .5px;
+}
+.zone-E { background: rgba(55,120,255,.1); color: var(--cyan2); border: 1px solid rgba(55,120,255,.2); }
+.zone-C { background: var(--green-dim); color: var(--green2); border: 1px solid var(--green-dim); }
+.zone-D { background: rgba(219,168,71,.1); color: var(--amber2); border: 1px solid rgba(219,168,71,.2); }
+.zone-A { background: rgba(0,208,132,.15); color: var(--green); border: 1px solid var(--green-dim); }
+.zone-G { background: var(--red-bg); color: var(--red2); border: 1px solid var(--red-dim); }
+
+/* ── SEPARATORS ──────────────────────────────────────── */
+.divider { border-bottom: 1px solid var(--border0); margin: 4px 14px; }
+
+/* ── ANIMATIONS ──────────────────────────────────────── */
+@keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+.inst-card { animation: fadeIn .3s ease both; }
+.inst-card:nth-child(1) { animation-delay: .05s; }
+.inst-card:nth-child(2) { animation-delay: .10s; }
+.inst-card:nth-child(3) { animation-delay: .15s; }
+.inst-card:nth-child(4) { animation-delay: .20s; }
+.inst-card:nth-child(5) { animation-delay: .25s; }
+
+/* ── EV ROW BOTTOM ───────────────────────────────────── */
+.ev-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--border0);
+  border-top: 1px solid var(--border0);
+  flex-shrink: 0;
+}
+.ev-cell {
+  background: var(--bg1);
+  padding: 7px 13px;
+}
+.ev-cell.up { border-left: 2px solid var(--green); }
+.ev-cell.dn { border-left: 2px solid var(--red); }
+.ev-label { font-size: 6px; color: var(--text3); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1px; }
+.ev-val { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -1px; }
+.ev-cell.up .ev-val { color: var(--green2); }
+.ev-cell.dn .ev-val { color: var(--red2); }
+.ev-sub { font-size: 8px; color: var(--text3); margin-top: 2px; }
+
+/* ── REGIME DISPLAY ──────────────────────────────────── */
+.regime-display {
+  padding: 5px 14px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border0);
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+.regime-label { font-size: 9px; color: var(--text2); letter-spacing: 1px; font-weight: 600; }
+.regime-val {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.regime-SHORT { color: var(--red2); }
+.regime-LONG  { color: var(--green2); }
+.regime-NEUTRE { color: var(--amber2); }
+
+.pc-display {
+  margin-left: auto; display: flex; align-items: center; gap: 8px;
+}
+.pc-item { font-size: 9px; color: var(--text2); }
+.pc-item span { color: var(--text0); font-weight: 600; }
+.pc-item.extreme span { color: var(--red2); }
+
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ════════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="logo">🏛 KAM INC.</div>
+    <div class="separator"></div>
+    <div class="sub">GAMMA DASHBOARD · PRÉ-MARCHÉ</div>
+  </div>
+  <div class="topbar-ticker">
+    <div class="ticker-item">
+      <span class="ticker-sym">GC</span>
+      <span class="ticker-val">4 858,2</span>
+      <span class="ticker-chg up">+8,2 ▲</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">ES</span>
+      <span class="ticker-val">7 070,25</span>
+      <span class="ticker-chg up">+70,3 ▲</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">NQ</span>
+      <span class="ticker-val">26 427,25</span>
+      <span class="ticker-chg up">+427 ▲</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">RTY</span>
+      <span class="ticker-val">2 726,0</span>
+      <span class="ticker-chg up">+26 ▲</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">WTI</span>
+      <span class="ticker-val">91,68</span>
+      <span class="ticker-chg up">+0,7 ▲</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">VIX</span>
+      <span class="ticker-val">19,5</span>
+      <span class="ticker-chg dn">−</span>
+    </div>
+    <div class="ticker-item">
+      <span class="ticker-sym">DXY</span>
+      <span class="ticker-val">+0,20%</span>
+      <span class="ticker-chg dn">↑</span>
+    </div>
+  </div>
+  <div class="topbar-meta">
+    <div>
+      <div class="topbar-time" id="clock">07:17:00</div>
+      <div class="topbar-date">JEU 16 AVRIL 2026 · CET</div>
+    </div>
+    <div class="status-dot"></div>
+  </div>
+</div>
+
+<!-- ═══ INSTRUMENTS BAR ══════════════════════════════════ -->
+<div class="instruments-bar">
+  <!-- GC -->
+  <div class="inst-card bull">
+    <div class="inst-card-top">
+      <div>
+        <div class="inst-sym">GC</div>
+        <div class="inst-name">GOLD FUTURES · OGK6</div>
+      </div>
+      <div class="inst-num">#1 PRIORITÉ</div>
+    </div>
+    <div class="inst-cpl">4 858,2</div>
+    <div class="inst-footer">
+      <span class="inst-biais">▲ HAUSSIER</span>
+      <span class="inst-gp">GP <span>4 850</span> · +8,2 pts</span>
+    </div>
+  </div>
+  <!-- ES -->
+  <div class="inst-card bull">
+    <div class="inst-card-top">
+      <div>
+        <div class="inst-sym">ES</div>
+        <div class="inst-name">S&P 500 E-MINI · EW3J6 2DTE</div>
+      </div>
+      <div class="inst-num">#2 PRIORITÉ</div>
+    </div>
+    <div class="inst-cpl">7 070,25</div>
+    <div class="inst-footer">
+      <span class="inst-biais">▲ HAUSSIER</span>
+      <span class="inst-gp">GP <span>7 000</span> · +70,3 pts</span>
+    </div>
+  </div>
+  <!-- NQ -->
+  <div class="inst-card bull">
+    <div class="inst-card-top">
+      <div>
+        <div class="inst-sym">NQ</div>
+        <div class="inst-name">NASDAQ 100 · QN3J6 2DTE</div>
+      </div>
+      <div class="inst-num">#3 PRIORITÉ</div>
+    </div>
+    <div class="inst-cpl">26 427,25</div>
+    <div class="inst-footer">
+      <span class="inst-biais">▲ HAUSSIER FORT</span>
+      <span class="inst-gp">GP <span>26 000</span> · +427 pts</span>
+    </div>
+  </div>
+  <!-- RTY -->
+  <div class="inst-card neut">
+    <div class="inst-card-top">
+      <div>
+        <div class="inst-sym">RTY</div>
+        <div class="inst-name">RUSSELL 2000 · R3EJ6 2DTE</div>
+      </div>
+      <div class="inst-num">#4 PRIORITÉ</div>
+    </div>
+    <div class="inst-cpl">2 726,0</div>
+    <div class="inst-footer">
+      <span class="inst-biais">◆ NEUTRE/PIVOT</span>
+      <span class="inst-gp">GP <span>2 700</span> · +26 pts</span>
+    </div>
+  </div>
+  <!-- WTI -->
+  <div class="inst-card neut">
+    <div class="inst-card-top">
+      <div>
+        <div class="inst-sym">WTI</div>
+        <div class="inst-name">CRUDE OIL · LOK6 1DTE</div>
+      </div>
+      <div class="inst-num">#5 PRIORITÉ</div>
+    </div>
+    <div class="inst-cpl">91,68</div>
+    <div class="inst-footer">
+      <span class="inst-biais">◆ NEUTRE/H. FAIBLE</span>
+      <span class="inst-gp">GP <span>91</span> · +0,7 pts</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD 3 COL ══════════════════════════════════ -->
+<div class="dashboard">
+
+  <!-- ── LEFT : NIVEAUX GAMMA ────────────────────── -->
+  <div class="panel-left">
+    <div class="panel-header">
+      <span class="panel-header-label">Niveaux Gamma</span>
+      <div class="inst-tabs" style="margin-left:auto;border:none;">
+        <div class="inst-tab active" onclick="setInst('GC',this)">GC</div>
+        <div class="inst-tab" onclick="setInst('ES',this)">ES</div>
+        <div class="inst-tab" onclick="setInst('NQ',this)">NQ</div>
+        <div class="inst-tab" onclick="setInst('RTY',this)">RTY</div>
+        <div class="inst-tab" onclick="setInst('WTI',this)">WTI</div>
+      </div>
+    </div>
+
+    <div class="regime-display" id="regime-display">
+      <span class="regime-label">ZONE</span>
+      <span class="regime-val" id="regime-zone">E — NEUTRE/PIVOT</span>
+      <div class="pc-display">
+        <span class="pc-item">P/C OI <span id="regime-pc">0,54</span></span>
+        <span class="pc-item">Vol P/C <span id="regime-vpc">0,36</span></span>
+      </div>
+    </div>
+
+    <div class="levels-container" id="levels-container">
+      <!-- Généré dynamiquement -->
+    </div>
+
+    <div class="ev-row">
+      <div class="ev-cell up">
+        <div class="ev-label">EV Haussier</div>
+        <div class="ev-val" id="lev-evh">4 900</div>
+        <div class="ev-sub" id="lev-evh-sub">Call Wall 1 · S1 TP4</div>
+      </div>
+      <div class="ev-cell dn">
+        <div class="ev-label">EV Baissier</div>
+        <div class="ev-val" id="lev-evb">4 807</div>
+        <div class="ev-sub" id="lev-evb-sub">Put Wall 1 · S2 TP4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CENTER : TABLE MULTI-INSTRUMENTS ─────────── -->
+  <div class="panel-center">
+    <div class="panel-header">
+      <span class="panel-header-label">Market Profile · Options Flow · Scénarios</span>
+      <div class="panel-header-dot"></div>
+    </div>
+    <div class="inst-grid">
+      <table class="inst-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="active">#1 GC</th>
+            <th>#2 ES</th>
+            <th>#3 NQ</th>
+            <th>#4 RTY</th>
+            <th>#5 WTI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- DATE & CONTRAT -->
+          <tr class="section-row"><td colspan="6">■ SESSION</td></tr>
+          <tr>
+            <td>Contrat</td>
+            <td class="val-text0">OGK6</td>
+            <td class="val-text0">EW3J6</td>
+            <td class="val-text0">QN3J6</td>
+            <td class="val-text0">R3EJ6</td>
+            <td class="val-text0">LOK6</td>
+          </tr>
+          <tr>
+            <td>CPL</td>
+            <td class="val-cyan">4 858,2</td>
+            <td class="val-cyan">7 070,25</td>
+            <td class="val-cyan">26 427,25</td>
+            <td class="val-cyan">2 726,0</td>
+            <td class="val-cyan">91,68</td>
+          </tr>
+          <tr>
+            <td>Biais</td>
+            <td class="val-bull">▲ HAUSSIER</td>
+            <td class="val-bull">▲ HAUSSIER</td>
+            <td class="val-bull">▲ H. FORT</td>
+            <td class="val-neut">◆ NEUTRE</td>
+            <td class="val-neut">◆ NEUTRE</td>
+          </tr>
+          <tr>
+            <td>Régime</td>
+            <td>SHORT</td>
+            <td>NEUTRE</td>
+            <td>SHORT</td>
+            <td>LONG</td>
+            <td>SHORT</td>
+          </tr>
+          <tr>
+            <td>Zone CPL</td>
+            <td><span class="zone-badge zone-E">E·PIVOT</span></td>
+            <td><span class="zone-badge zone-E">E·PIVOT</span></td>
+            <td><span class="zone-badge zone-E">E·PIVOT</span></td>
+            <td><span class="zone-badge zone-C">C·LONG γ</span></td>
+            <td><span class="zone-badge zone-E">E·PIVOT</span></td>
+          </tr>
+
+          <!-- MARKET PROFILE -->
+          <tr class="section-row"><td colspan="6">■ MARKET PROFILE — ATAS</td></tr>
+          <tr>
+            <td>H Session</td>
+            <td class="val-green">4 877</td>
+            <td class="val-green">7 082</td>
+            <td class="val-green">26 490</td>
+            <td class="val-green">2 730</td>
+            <td class="val-green">92,40</td>
+          </tr>
+          <tr>
+            <td>L Session</td>
+            <td class="val-red">4 828</td>
+            <td class="val-red">7 060</td>
+            <td class="val-red">26 370</td>
+            <td class="val-red">2 722</td>
+            <td class="val-red">91,05</td>
+          </tr>
+          <tr>
+            <td>POC J-1</td>
+            <td>4 822</td>
+            <td>7 018</td>
+            <td>26 080</td>
+            <td>2 720</td>
+            <td>91,50</td>
+          </tr>
+          <tr>
+            <td>VAH J-1</td>
+            <td>4 858</td>
+            <td>7 048</td>
+            <td>26 220</td>
+            <td>2 730</td>
+            <td>93,50</td>
+          </tr>
+          <tr>
+            <td>VAL J-1</td>
+            <td>4 800</td>
+            <td>6 995</td>
+            <td>25 960</td>
+            <td>2 716</td>
+            <td>89,50</td>
+          </tr>
+          <tr>
+            <td>Range J-1</td>
+            <td>87,5 pts</td>
+            <td>72,75 pts</td>
+            <td>443,75 pts</td>
+            <td>20,1 pts</td>
+            <td>6,34 pts</td>
+          </tr>
+          <tr>
+            <td>Moy 5j</td>
+            <td>103 pts</td>
+            <td>89 pts</td>
+            <td>415 pts</td>
+            <td>52 pts</td>
+            <td>6,8 pts</td>
+          </tr>
+          <tr>
+            <td>Coverage</td>
+            <td>47% <span style="color:var(--amber2)">🟠</span></td>
+            <td>25% <span style="color:var(--green2)">🟢</span></td>
+            <td>29% <span style="color:var(--green2)">🟢</span></td>
+            <td>16% <span style="color:var(--amber2)">🟡</span></td>
+            <td>20% <span style="color:var(--amber2)">🟡</span></td>
+          </tr>
+          <tr>
+            <td>Range Prévis.</td>
+            <td>4 807 – 4 910</td>
+            <td>7 026 – 7 115</td>
+            <td>26 220 – 26 635</td>
+            <td>2 700 – 2 752</td>
+            <td>88,28 – 95,08</td>
+          </tr>
+
+          <!-- OPTIONS FLOW -->
+          <tr class="section-row"><td colspan="6">■ OPTIONS FLOW — QuikStrike EOD</td></tr>
+          <tr>
+            <td>Gamma Pin</td>
+            <td class="val-gold">4 850</td>
+            <td class="val-gold">7 000</td>
+            <td class="val-gold">26 000</td>
+            <td class="val-gold">2 700</td>
+            <td class="val-gold">91</td>
+          </tr>
+          <tr>
+            <td>Call Wall 1</td>
+            <td class="val-green">4 900</td>
+            <td class="val-green">7 100</td>
+            <td class="val-green">26 500</td>
+            <td class="val-green">2 800</td>
+            <td class="val-green">95</td>
+          </tr>
+          <tr>
+            <td>Put Wall 1</td>
+            <td class="val-red">4 807</td>
+            <td class="val-red">6 900</td>
+            <td class="val-red">25 800</td>
+            <td class="val-red">2 650</td>
+            <td class="val-red">88,28</td>
+          </tr>
+          <tr>
+            <td>P/C OI</td>
+            <td class="val-green">0,54 <span class="pill pill-green">CALL</span></td>
+            <td class="val-red">3,04 <span class="pill pill-red">PUT ⚠</span></td>
+            <td>1,35</td>
+            <td class="val-red">2,38 <span class="pill pill-red">PUT</span></td>
+            <td>1,09</td>
+          </tr>
+          <tr>
+            <td>Vol P/C</td>
+            <td class="val-green">0,36</td>
+            <td class="val-red">2,36</td>
+            <td>1,12</td>
+            <td>1,14</td>
+            <td>0,82</td>
+          </tr>
+
+          <!-- NIVEAUX GAMMA -->
+          <tr class="section-row"><td colspan="6">■ NIVEAUX GEX — KAM_Gamma.py</td></tr>
+          <tr>
+            <td>ZG Zero Gamma</td>
+            <td class="val-amber">4 850</td>
+            <td class="val-amber">6 979,8</td>
+            <td class="val-amber">25 988</td>
+            <td class="val-amber">2 691,8</td>
+            <td class="val-amber">90,90</td>
+          </tr>
+          <tr>
+            <td>LG Long Gamma</td>
+            <td class="val-cyan">4 862,5</td>
+            <td class="val-cyan">7 025</td>
+            <td class="val-cyan">26 025</td>
+            <td class="val-cyan">2 712,5</td>
+            <td class="val-cyan">91,50</td>
+          </tr>
+          <tr>
+            <td>CB / VT-C</td>
+            <td class="val-green">4 900</td>
+            <td class="val-green">7 100</td>
+            <td class="val-green">26 500</td>
+            <td class="val-green">2 750</td>
+            <td class="val-green">93,00</td>
+          </tr>
+          <tr>
+            <td>VT-P</td>
+            <td class="val-red">4 850</td>
+            <td class="val-red">7 000</td>
+            <td class="val-red">26 000</td>
+            <td class="val-red">2 650</td>
+            <td class="val-red">91,00</td>
+          </tr>
+          <tr>
+            <td>PIN zone</td>
+            <td>4 826 – 4 874</td>
+            <td>6 965 – 7 035</td>
+            <td>25 870 – 26 130</td>
+            <td>2 687 – 2 714</td>
+            <td>90,55 – 91,45</td>
+          </tr>
+
+          <!-- SCÉNARIOS -->
+          <tr class="section-row"><td colspan="6">■ SCÉNARIOS</td></tr>
+          <tr>
+            <td>S1 Trigger ▲</td>
+            <td class="val-green">&gt; 4 877</td>
+            <td class="val-green">&gt; 7 082</td>
+            <td class="val-green">&gt; 26 490</td>
+            <td class="val-green">&gt; 2 730</td>
+            <td class="val-green">&gt; 92,40</td>
+          </tr>
+          <tr>
+            <td>S1 TP1</td>
+            <td class="val-green">4 883</td>
+            <td class="val-green">7 088</td>
+            <td class="val-green">26 530</td>
+            <td class="val-green">2 738</td>
+            <td class="val-green">93,00</td>
+          </tr>
+          <tr>
+            <td>S1 TP4 / EV H</td>
+            <td class="val-green">4 900</td>
+            <td class="val-green">7 100</td>
+            <td class="val-green">26 635</td>
+            <td class="val-green">2 800</td>
+            <td class="val-green">95,00</td>
+          </tr>
+          <tr>
+            <td>S1 Stop Loss</td>
+            <td class="val-red">&lt; 4 862</td>
+            <td class="val-red">&lt; 7 065</td>
+            <td class="val-red">&lt; 26 380</td>
+            <td class="val-red">&lt; 2 724</td>
+            <td class="val-red">&lt; 91,90</td>
+          </tr>
+          <tr>
+            <td>S2 Trigger ▼</td>
+            <td class="val-red">&lt; 4 828</td>
+            <td class="val-red">&lt; 7 060</td>
+            <td class="val-red">&lt; 26 370</td>
+            <td class="val-red">&lt; 2 722</td>
+            <td class="val-red">&lt; 91,05</td>
+          </tr>
+          <tr>
+            <td>S2 TP4 / EV B</td>
+            <td class="val-red">4 807</td>
+            <td class="val-red">6 900</td>
+            <td class="val-red">25 800</td>
+            <td class="val-red">2 650</td>
+            <td class="val-red">88,28</td>
+          </tr>
+          <tr>
+            <td>S2 Stop Loss</td>
+            <td class="val-green">&gt; 4 836</td>
+            <td class="val-green">&gt; 7 070</td>
+            <td class="val-green">&gt; 26 420</td>
+            <td class="val-green">&gt; 2 725</td>
+            <td class="val-green">&gt; 91,20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── RIGHT : SCÉNARIOS ACTIF ───────────────────── -->
+  <div class="panel-right">
+    <div class="panel-header">
+      <span class="panel-header-label">Scénarios · GC #1</span>
+      <div class="panel-header-dot"></div>
+    </div>
+
+    <!-- S1 -->
+    <div class="scenario-block sc-1">
+      <div class="sc-title">
+        <div class="sc-num sc-num-1">S1</div>
+        <span class="sc-label">HAUSSIER</span>
+        <span class="sc-type">BUY-STOP</span>
+      </div>
+      <div class="sc-trigger">
+        <strong>&gt; 4 877 (H session)</strong>
+        Cassure H session · call wall 4 900
+      </div>
+      <div class="tp-row"><span class="tp-lbl">TP1</span><div class="tp-bar"><div class="tp-fill" style="width:35%"></div></div><span class="tp-val">4 883</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP2</span><div class="tp-bar"><div class="tp-fill" style="width:57%"></div></div><span class="tp-val">4 890</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP3</span><div class="tp-bar"><div class="tp-fill" style="width:78%"></div></div><span class="tp-val">4 896</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP4</span><div class="tp-bar"><div class="tp-fill" style="width:100%"></div></div><span class="tp-val">4 900 ★</span></div>
+      <div class="sl-line"><span>STOP LOSS</span><span>&lt; 4 862</span></div>
+    </div>
+
+    <!-- S2 -->
+    <div class="scenario-block sc-2">
+      <div class="sc-title">
+        <div class="sc-num sc-num-2">S2</div>
+        <span class="sc-label">BAISSIER</span>
+        <span class="sc-type">SELL-STOP</span>
+      </div>
+      <div class="sc-trigger">
+        <strong>&lt; 4 828 (L session)</strong>
+        Cassure L session · put wall 4 807
+      </div>
+      <div class="tp-row"><span class="tp-lbl">TP1</span><div class="tp-bar"><div class="tp-fill" style="width:35%"></div></div><span class="tp-val">4 820</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP2</span><div class="tp-bar"><div class="tp-fill" style="width:60%"></div></div><span class="tp-val">4 812</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP3</span><div class="tp-bar"><div class="tp-fill" style="width:80%"></div></div><span class="tp-val">4 804</span></div>
+      <div class="tp-row"><span class="tp-lbl">TP4</span><div class="tp-bar"><div class="tp-fill" style="width:100%"></div></div><span class="tp-val">4 807 ★</span></div>
+      <div class="sl-line"><span>STOP LOSS</span><span>&gt; 4 836</span></div>
+    </div>
+
+    <!-- S3 -->
+    <div class="scenario-block sc-3">
+      <div class="sc-title">
+        <div class="sc-num sc-num-3">S3</div>
+        <span class="sc-label">RANGE</span>
+        <span class="sc-type">LIMITS</span>
+      </div>
+      <div class="sc-trigger">
+        <strong>4 828 – 4 877</strong>
+        GP 4 850 pivot · biais haussier
+      </div>
+      <div class="tp-row"><span class="tp-lbl" style="color:var(--amber)">LONG</span><div class="tp-bar"><div class="tp-fill" style="width:100%"></div></div><span class="tp-val">4 828→4 877</span></div>
+      <div class="tp-row"><span class="tp-lbl" style="color:var(--amber)">SL</span><div class="tp-bar"><div class="tp-fill" style="width:25%"></div></div><span class="tp-val">&lt; 4 810</span></div>
+      <div class="tp-row"><span class="tp-lbl" style="color:var(--amber)">SHORT</span><div class="tp-bar"><div class="tp-fill" style="width:100%"></div></div><span class="tp-val">4 877→4 828</span></div>
+      <div class="tp-row"><span class="tp-lbl" style="color:var(--amber)">SL</span><div class="tp-bar"><div class="tp-fill" style="width:25%"></div></div><span class="tp-val">&gt; 4 895</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--amber);padding:4px 0;margin-top:4px;border-top:1px solid rgba(219,168,71,.15);">
+        <span>EV H — 4 900</span><span>EV B — 4 807</span>
+      </div>
+    </div>
+
+    <!-- Règle d'or -->
+    <div style="padding:10px 14px;background:var(--bg2);border-top:1px solid var(--border0);flex-shrink:0;">
+      <div style="font-size:7px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">⭐ RÈGLE D'OR KAM</div>
+      <div style="font-size:8px;color:var(--text2);line-height:1.6;">
+        50% TP1 / 50% TP2<br>
+        BE immédiat dès TP1 atteint<br>
+        <span style="color:var(--text3);">Taille réduite −30% si Zone Short Gamma</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /dashboard -->
+
+<!-- ═══ STATUS BAR ═══════════════════════════════════════ -->
+<div class="statusbar">
+  <div class="status-seg gold">
+    PRIORITÉ <span>GC &gt; ES &gt; NQ &gt; RTY &gt; WTI</span>
+  </div>
+  <div class="status-seg">
+    JOURNÉE <span>2DTE WEEKLIES · ES/NQ/RTY expirent 18/04</span>
+  </div>
+  <div class="status-seg">
+    VIX <span>19,5</span>
+  </div>
+  <div class="status-seg">
+    DXY <span>+0,20%</span>
+  </div>
+  <div class="status-seg green">
+    GC SIGNAL DIRECTEUR · <span>CALL DOM. · P/C 0,54</span>
+  </div>
+  <div class="status-seg red">
+    ES RISQUE · <span>P/C OI 3,04 PUT EXTRÊME ⚠</span>
+  </div>
+  <div class="status-fill"></div>
+  <div class="status-seg right">
+    KAM INC. · <span>CONFIDENTIEL · 16/04/2026 · 07H17 CET</span>
+  </div>
+</div>
+
+<script>
+// ── DONNÉES PAR INSTRUMENT ────────────────────────────────
+const DATA = {
+  GC: {
+    cpl:4858.2, gp:4850, zg:4850, lg:4862.5, cb:4900, vtp:4850,
+    cw1:4900, pw1:4807, evh:4900, evb:4807,
+    pc:'0,54', vpc:'0,36',
+    regime:'SHORT', zone:'E', biais:'NEUTRE / PIVOT',
+    pin_h:4874.25, pin_l:4825.75,
+    s1_trig:'> 4 877', s1_entry:'4 879', s1_tp1:'4 883', s1_tp2:'4 890', s1_tp3:'4 896', s1_tp4:'4 900',
+    s1_sl:'< 4 862',
+    s2_trig:'< 4 828', s2_tp1:'4 820', s2_tp2:'4 812', s2_tp3:'4 804', s2_tp4:'4 807',
+    s2_sl:'> 4 836',
+    s3_range:'4 828 – 4 877', s3_desc:'GP 4 850 pivot · biais haussier',
+    s3_long:'4 828→4 877', s3_lsl:'< 4 810', s3_short:'4 877→4 828', s3_ssl:'> 4 895'
+  },
+  ES: {
+    cpl:7070.25, gp:7000, zg:6979.8, lg:7025, cb:7100, vtp:7000,
+    cw1:7100, pw1:6900, evh:7100, evb:6900,
+    pc:'3,04', vpc:'2,36',
+    regime:'NEUTRE', zone:'E', biais:'NEUTRE / PIVOT',
+    pin_h:7035, pin_l:6965,
+    s1_trig:'> 7 082', s1_entry:'7 084', s1_tp1:'7 088', s1_tp2:'7 093', s1_tp3:'7 097', s1_tp4:'7 100',
+    s1_sl:'< 7 065',
+    s2_trig:'< 7 060', s2_tp1:'7 048', s2_tp2:'7 025', s2_tp3:'6 960', s2_tp4:'6 900',
+    s2_sl:'> 7 070',
+    s3_range:'7 060 – 7 082', s3_desc:'GP 7 000 plancher critique · P/C 3,04 ⚠',
+    s3_long:'7 060→7 082', s3_lsl:'< 7 045', s3_short:'7 082→7 060', s3_ssl:'> 7 090'
+  },
+  NQ: {
+    cpl:26427.25, gp:26000, zg:25988, lg:26025, cb:26500, vtp:26000,
+    cw1:26500, pw1:25800, evh:26635, evb:25800,
+    pc:'1,35', vpc:'1,12',
+    regime:'SHORT', zone:'E', biais:'NEUTRE / PIVOT',
+    pin_h:26130, pin_l:25870,
+    s1_trig:'> 26 490', s1_entry:'26 500', s1_tp1:'26 530', s1_tp2:'26 560', s1_tp3:'26 600', s1_tp4:'26 635',
+    s1_sl:'< 26 380',
+    s2_trig:'< 26 370', s2_tp1:'26 220', s2_tp2:'26 080', s2_tp3:'25 960', s2_tp4:'25 800',
+    s2_sl:'> 26 420',
+    s3_range:'26 370 – 26 490', s3_desc:'GP 26 000 franchi +427 pts',
+    s3_long:'26 370→26 490', s3_lsl:'< 26 300', s3_short:'26 490→26 370', s3_ssl:'> 26 560'
+  },
+  RTY: {
+    cpl:2726, gp:2700, zg:2691.8, lg:2712.5, cb:2750, vtp:2650,
+    cw1:2800, pw1:2650, evh:2800, evb:2650,
+    pc:'2,38', vpc:'1,14',
+    regime:'LONG', zone:'C', biais:'HAUSSIER',
+    pin_h:2713.5, pin_l:2686.5,
+    s1_trig:'> 2 730', s1_entry:'2 732', s1_tp1:'2 738', s1_tp2:'2 746', s1_tp3:'2 775', s1_tp4:'2 800',
+    s1_sl:'< 2 724',
+    s2_trig:'< 2 722', s2_tp1:'2 716', s2_tp2:'2 706', s2_tp3:'2 675', s2_tp4:'2 650',
+    s2_sl:'> 2 725',
+    s3_range:'2 722 – 2 730', s3_desc:'GP 2 700 · range 8,1 pts',
+    s3_long:'2 722→2 730', s3_lsl:'< 2 716', s3_short:'2 730→2 722', s3_ssl:'> 2 736'
+  },
+  WTI: {
+    cpl:91.68, gp:91, zg:90.9, lg:91.5, cb:95, vtp:91,
+    cw1:95, pw1:88.28, evh:95, evb:88.28,
+    pc:'1,09', vpc:'0,82',
+    regime:'SHORT', zone:'E', biais:'NEUTRE / PIVOT',
+    pin_h:91.45, pin_l:90.55,
+    s1_trig:'> 92,40', s1_entry:'92,50', s1_tp1:'93,00', s1_tp2:'93,50', s1_tp3:'94,00', s1_tp4:'95,0',
+    s1_sl:'< 91,90',
+    s2_trig:'< 91,05', s2_tp1:'90,50', s2_tp2:'90,00', s2_tp3:'89,50', s2_tp4:'88,28',
+    s2_sl:'> 91,20',
+    s3_range:'91,05 – 92,40', s3_desc:'GP 91 pivot · LON6 +1 206',
+    s3_long:'91,05→92,40', s3_lsl:'< 90,50', s3_short:'92,40→91,05', s3_ssl:'> 93,00'
+  }
+};
+
+let currentInst = 'GC';
+
+// ── NIVEAUX PANEL ─────────────────────────────────────────
+function fnum(n, d=2) {
+  if (n === null || n === undefined) return '—';
+  let s = Math.abs(parseFloat(n)).toFixed(d);
+  let [int, dec] = s.split('.');
+  int = int.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
+  return (n < 0 ? '-' : '') + (dec && dec !== '0'.repeat(d) ? `${int},${dec}` : int);
+}
+
+function renderLevels(sym) {
+  const d = DATA[sym];
+  const c = d.cpl;
+
+  const levels = [
+    { name:'CW  (EV H)', val:d.cw1, cls:'green', tag:'EV H', tagcls:'tag-green', label:'S1 TP4' },
+    { name:'CB / VT-C',  val:d.cb,  cls:'green', tag:'S1',   tagcls:'tag-green', label:'Déclencheur haussier' },
+    { name:'LG',         val:d.lg,  cls:'cyan',  label:'Long Gamma — pinning' },
+    { name:'ZG',         val:d.zg,  cls:'amber', label:'Zero Gamma — flip' },
+    { name:'GP  ◆',      val:d.gp,  cls:'gold',  label:'Gamma Pin — aimantation' },
+    { name:'PIN haute',  val:d.pin_h,cls:'amber',label:'GP × 1.005' },
+    { name:'PIN basse',  val:d.pin_l,cls:'amber',label:'GP × 0.995' },
+    { name:'VT-P',       val:d.vtp, cls:'red',   tag:'S2', tagcls:'tag-red', label:'Déclencheur baissier' },
+    { name:'PW  (EV B)', val:d.pw1, cls:'red',   tag:'EV B', tagcls:'tag-red', label:'S2 TP4' },
+  ];
+
+  // Insérer CPL à la bonne position
+  const allLevels = [...levels, { name:'CPL', val:c, cls:'cyan', isCPL:true }]
+    .sort((a,b) => b.val - a.val);
+
+  let html = '';
+  for (const lv of allLevels) {
+    const isCpl = lv.isCPL;
+    html += `<div class="level-row ${isCpl?'cpl-marker':''}">
+      <span class="level-name">${lv.name}${lv.tag?`<span class="tag ${lv.tagcls||''}">${lv.tag}</span>`:''}</span>
+      <span class="level-val ${lv.cls}">${fnum(lv.val, lv.val > 100 ? (lv.val > 1000 ? 0 : 1) : 2)}${isCpl?'<span class="cpl-arrow">◄</span>':''}</span>
+    </div>`;
+  }
+
+  document.getElementById('levels-container').innerHTML = html;
+
+  // Update régime + EV
+  document.getElementById('regime-zone').textContent = `${d.zone} · ${d.biais}`;
+  document.getElementById('regime-pc').textContent = d.pc;
+  document.getElementById('regime-vpc').textContent = d.vpc;
+
+  // EV
+  document.getElementById('lev-evh').textContent = fnum(d.evh, d.evh > 100 ? (d.evh > 1000 ? 0 : 1) : 2);
+  document.getElementById('lev-evb').textContent = fnum(d.evb, d.evb > 100 ? (d.evb > 1000 ? 0 : 1) : 2);
+  document.getElementById('lev-evh-sub').textContent = `Call Wall · ${d.pc} P/C OI`;
+  document.getElementById('lev-evb-sub').textContent = `Put Wall · ${d.regime} régime`;
+}
+
+function renderScenarios(sym) {
+  const d = DATA[sym];
+  const rp = document.querySelector('.panel-right');
+  if (!rp) return;
+
+  const symNames = {GC:'GOLD (GC)',ES:'S&P 500 (ES)',NQ:'NASDAQ (NQ)',RTY:'RUSSELL (RTY)',WTI:'CRUDE OIL'};
+  rp.querySelector('.panel-header .panel-header-label').textContent = `Scénarios · ${sym} #${['GC','ES','NQ','RTY','WTI'].indexOf(sym)+1}`;
+
+  // S1
+  const s1 = rp.querySelector('.sc-1');
+  s1.querySelector('.sc-trigger strong').textContent = d.s1_trig + ' (H session)';
+  const s1tps = [d.s1_tp1, d.s1_tp2, d.s1_tp3, d.s1_tp4+'★'];
+  s1.querySelectorAll('.tp-val').forEach((el,i) => el.textContent = s1tps[i] || '');
+  s1.querySelector('.sl-line span:last-child').textContent = d.s1_sl;
+
+  // S2
+  const s2 = rp.querySelector('.sc-2');
+  s2.querySelector('.sc-trigger strong').textContent = d.s2_trig + ' (L session)';
+  const s2tps = [d.s2_tp1, d.s2_tp2, d.s2_tp3, d.s2_tp4+'★'];
+  s2.querySelectorAll('.tp-val').forEach((el,i) => el.textContent = s2tps[i] || '');
+  s2.querySelector('.sl-line span:last-child').textContent = d.s2_sl;
+
+  // S3
+  const s3 = rp.querySelector('.sc-3');
+  s3.querySelector('.sc-trigger strong').textContent = d.s3_range;
+  s3.querySelector('.sc-trigger').childNodes[s3.querySelector('.sc-trigger').childNodes.length-1].textContent = d.s3_desc;
+  const s3rows = s3.querySelectorAll('.tp-val');
+  s3rows[0].textContent = d.s3_long;
+  s3rows[1].textContent = d.s3_lsl;
+  s3rows[2].textContent = d.s3_short;
+  s3rows[3].textContent = d.s3_ssl;
+  const evline = s3.querySelector('div[style*="border-top"]');
+  if (evline) evline.innerHTML = `<span>EV H — ${d.evh}</span><span>EV B — ${d.evb}</span>`;
+}
+
+function setInst(sym, tabEl) {
+  currentInst = sym;
+  document.querySelectorAll('.inst-tab').forEach(t => t.classList.remove('active'));
+  if (tabEl) tabEl.classList.add('active');
+  renderLevels(sym);
+  renderScenarios(sym);
+}
+
+// ── HORLOGE ───────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+  const el = document.getElementById('clock');
+  if (el) el.textContent = `${h}:${m}:${s}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── INIT ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderLevels('GC');
+  renderScenarios('GC');
+  // Clic sur instruments bar → switch scénarios
+  document.querySelectorAll('.inst-card').forEach((card, i) => {
+    const syms = ['GC','ES','NQ','RTY','WTI'];
+    card.addEventListener('click', () => {
+      const tab = document.querySelectorAll('.inst-tab')[i];
+      setInst(syms[i], tab);
+    });
+  });
+});
+</script>
+</body>
+</html>
