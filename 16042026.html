@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="KAM INC. — Ma réflexion du jour · 16/04/2026">
+<meta property="og:description" content="Analyse intraday · GC #1 HAUSSIER · ES #2 HAUSSIER · NQ #3 HAUSSIER FORT · RTY #4 NEUTRE/PIVOT · WTI #5 NEUTRE/HAUSSIER · 07H17 CET">
+<meta property="og:image" content="https://jck-jira.github.io/KAM_Reflexion/og-16042026.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jck-jira.github.io/KAM_Reflexion/og-16042026.png">
+<title>KAM INC. — Ma réflexion du jour · 16/04/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0f1e;--bg2:#151c2e;--bg3:#1a2038;--bg4:#0a0d1a;
+  --border:#1e2540;--border2:#24293c;
+  --gold:#ff8c00;--gold2:#ffaa33;
+  --green:#4bda88;--green-bg:#042e16;--green-border:#06401a;
+  --red:#f39b97;--red-bg:#2d0607;--red-border:#500a0a;
+  --amber:#bd790e;--amber-bg:#141004;--amber-border:#3d2800;
+  --evp-val:#4bda88;--evm-val:#f39b97;
+  --text:#e8edf5;--muted:#3a4870;--sub:#5a6a90;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{background:var(--bg4);border-bottom:1px solid #1c2a3e;padding:10px 28px 0}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.meta{font-size:10px;color:var(--muted);letter-spacing:.8px;font-weight:500;margin-bottom:4px;text-transform:uppercase}
+.title h1{font-size:26px;font-weight:600;color:var(--text);line-height:1}
+.title h1 span{color:var(--gold2)}
+.kam-badge{background:#0a1828;border:1px solid var(--gold);padding:4px 12px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;border-radius:3px;display:flex;align-items:center;gap:6px}
+.time-badge{font-size:11px;color:var(--sub);text-align:right;letter-spacing:.3px;margin-bottom:4px}
+.tabs{display:flex;gap:4px;padding-bottom:0}
+.tab{padding:7px 16px;font-size:11px;font-weight:600;letter-spacing:.5px;border:1px solid var(--border2);border-bottom:none;cursor:pointer;color:var(--muted);background:var(--bg4);border-radius:4px 4px 0 0;transition:.1s;user-select:none;text-transform:uppercase}
+.tab.active.bull{background:var(--green-bg);border-color:var(--green);color:var(--green);border-bottom:2px solid var(--green)}
+.tab.active.neut{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);border-bottom:2px solid var(--amber)}
+main{padding:16px 28px;max-width:1200px;margin:0 auto}
+.panel{display:none}.panel.active{display:block}
+.inst-header{display:flex;justify-content:space-between;align-items:flex-start;background:#151c2e;border:1px solid #24293c;border-radius:6px;padding:16px 20px;margin-bottom:12px;border-top:1px solid #2e3860}
+.inst-left{display:flex;gap:14px;align-items:center}
+.inst-icon{width:44px;height:44px;border-radius:4px;background:var(--bg3);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--sub);letter-spacing:.5px}
+.inst-info h2{font-size:20px;font-weight:700;color:var(--text)}
+.inst-info .sub{font-size:10px;color:var(--muted);letter-spacing:.3px;margin-top:2px}
+.cpl-label{font-size:9px;color:var(--muted);letter-spacing:.8px;margin-bottom:4px;text-transform:uppercase;text-align:right}
+.cpl-big{font-size:38px;font-weight:700;color:#7fb3ff;line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.biais-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.8px;margin-top:8px;border:1px solid;text-transform:uppercase}
+.biais-badge.bull{background:var(--green-bg);color:var(--green);border-color:var(--green)}
+.biais-badge.neut{background:var(--amber-bg);color:var(--amber);border-color:var(--amber)}
+.options-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+.opt-cell{background:#151c2e;border:1px solid #1e2540;border-radius:8px;padding:10px 14px}
+.opt-cell.hg{border-left:2px solid #dab447}.opt-cell.hr{border-left:2px solid #deba6c}
+.opt-cell .label{font-size:8px;font-weight:600;color:#4a5870;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:6px}
+.opt-cell .val{font-size:14px;font-weight:700;color:#7db6fd;line-height:1.3}
+.opt-cell.hg .val{color:#dab447}.opt-cell.hr .val{color:#deba6c}
+.opt-cell .hint{font-size:9px;color:#2a3850;margin-top:4px;letter-spacing:.3px;text-transform:uppercase}
+.scenarios{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.sc.s1{background:#042e16;border:1.5px solid #1d6b3a;border-top:2px solid #2a8f4f;border-radius:12px;overflow:hidden;padding:12px 14px}
+.sc.s2{background:#2d0607;border:1.5px solid #6e1a1a;border-top:2px solid #991f20;border-radius:12px;overflow:hidden;padding:12px 14px}
+.sc.s3{background:#141004;border:1.5px solid #4a3418;border-top:2px solid #6b4d22;border-radius:12px;overflow:hidden;padding:12px 14px}
+.sc-head{display:flex;justify-content:space-between;align-items:center;margin:-12px -14px 12px;padding:7px 10px}
+.sc.s1 .sc-head{background:#042e16;border-bottom:1px solid #1d6b3a}
+.sc.s2 .sc-head{background:#2d0607;border-bottom:1px solid #6e1a1a}
+.sc.s3 .sc-head{background:#141004;border-bottom:1px solid #4a3418}
+.sc-label{display:flex;align-items:center;gap:7px}
+.sc-num{width:18px;height:18px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800}
+.sc.s1 .sc-num{background:#4bda88;color:#001f0a}
+.sc.s2 .sc-num{background:#f39b97;color:#2d0607}
+.sc.s3 .sc-num{background:#bd790e;color:#141004}
+.sc-name{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.sc.s1 .sc-name{color:#4bda88}.sc.s2 .sc-name{color:#f39b97}.sc.s3 .sc-name{color:#bd790e}
+.sc-pill{font-size:8px;font-weight:800;letter-spacing:1px;padding:2px 7px;border-radius:2px;text-transform:uppercase;border:1px solid}
+.sc.s1 .sc-pill{background:rgba(75,218,136,.15);color:#4bda88;border-color:#4bda88}
+.sc.s2 .sc-pill{background:rgba(243,155,151,.12);color:#f39b97;border-color:#f39b97}
+.sc.s3 .sc-pill{background:rgba(189,121,14,.15);color:#deba6c;border-color:#deba6c}
+.sc-trigger{font-size:10px;color:var(--muted);margin-bottom:10px;padding:6px 8px;border-radius:4px;border-left:2px solid;background:rgba(0,0,0,.25)}
+.sc.s1 .sc-trigger{border-left-color:#4bda88}.sc.s2 .sc-trigger{border-left-color:#f39b97}.sc.s3 .sc-trigger{border-left-color:#bd790e}
+.sc-trigger strong{display:block;font-size:17px;font-weight:800;margin-bottom:2px;letter-spacing:-0.5px;font-variant-numeric:tabular-nums}
+.sc.s1 .sc-trigger strong{color:#4bda88}.sc.s2 .sc-trigger strong{color:#f39b97}.sc.s3 .sc-trigger strong{color:#deba6c}
+.tp-rows{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.tp-row{display:flex;align-items:center;gap:8px}
+.tp-lbl{font-size:8px;font-weight:800;min-width:36px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+.tp-bar-wrap{flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.tp-bar{height:100%;border-radius:2px}
+.sc.s1 .tp-bar{background:linear-gradient(90deg,rgba(38,177,88,.25),#4bda88)}
+.sc.s2 .tp-bar{background:linear-gradient(90deg,rgba(215,70,67,.25),#f39b97)}
+.sc.s3 .tp-bar{background:linear-gradient(90deg,rgba(189,121,14,.25),#bd790e)}
+.tp-val{font-size:11px;font-weight:700;min-width:95px;text-align:right;font-variant-numeric:tabular-nums}
+.sc.s1 .tp-val{color:#4bda88}.sc.s2 .tp-val{color:#f39b97}.sc.s3 .tp-val{color:#bd790e}
+.sl-row{display:flex;justify-content:space-between;border-radius:3px;padding:5px 10px;font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;border:1px solid;margin-top:2px}
+.sc.s1 .sl-row{background:rgba(38,177,88,.06);color:#f39b97;border-color:rgba(243,155,151,.3)}
+.sc.s2 .sl-row{background:rgba(75,218,136,.06);color:#4bda88;border-color:rgba(75,218,136,.3)}
+.sc.s3 .sl-row{background:rgba(189,121,14,.06);color:#bd790e;border-color:rgba(189,121,14,.3)}
+.ev-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.ev-cell{background:#151c2e;border:1px solid #24293c;border-radius:6px;padding:14px 18px}
+.ev-cell.up{border-left:2px solid #4bda88}.ev-cell.dn{border-left:2px solid #f39b97}
+.ev-label{font-size:9px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.ev-pill{font-size:9px;font-weight:800;padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:8px;text-transform:uppercase;border:1px solid}
+.ev-big{font-size:36px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-1px;line-height:1.1}
+.ev-cell.up .ev-big{color:var(--evp-val)}.ev-cell.dn .ev-big{color:var(--evm-val)}
+.ev-sub{font-size:10px;color:var(--muted);margin-top:6px}
+.ev-inline{display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:var(--amber);padding:4px 0;margin-top:4px;border-top:1px solid rgba(255,170,0,.2)}
+footer{background:var(--bg4);border-top:1px solid var(--border);padding:8px 28px;display:flex;justify-content:space-between;font-size:9px;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-top">
+    <div class="header-left">
+      <div class="meta">ANALYSE INTRADAY · 16 AVRIL 2026</div>
+      <div class="title"><h1>Ma réflexion <span>du jour</span></h1></div>
+    </div>
+    <div>
+      <div class="time-badge">07H17 CET</div>
+      <div class="kam-badge">🏛 KAM INC.</div>
+    </div>
+  </div>
+  <div class="tabs">
+    <div class="tab active bull" onclick="show(0)"><b>#1 GC</b></div>
+    <div class="tab bull" onclick="show(1)">#2 ES</div>
+    <div class="tab bull" onclick="show(2)">#3 NQ</div>
+    <div class="tab neut" onclick="show(3)">#4 RTY</div>
+    <div class="tab neut" onclick="show(4)">#5 WTI</div>
+  </div>
+</div>
+<main>
+<div class="panel active" id="p0">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">GC</div>
+      <div class="inst-info"><h2>GOLD</h2><div class="sub">Gold (GC) · OGK6 · Expiration en cours</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 16/04 · 07H17</div>
+      <div class="cpl-big">4 858,2</div>
+      <div class="biais-badge bull">▲ HAUSSIER</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell hg"><div class="label">Gamma Pin</div><div class="val">GC · 4 850</div><div class="hint">CPL +8,2 pts AU-DESSUS · OGK6</div></div>
+    <div class="opt-cell"><div class="label">Put Wall</div><div class="val">4 800 / 4 807</div><div class="hint">plancher options</div></div>
+    <div class="opt-cell"><div class="label">Call Wall</div><div class="val">4 900 / 5 000</div><div class="hint">résistance options</div></div>
+    <div class="opt-cell hg"><div class="label">P/C OI · Vol P/C</div><div class="val">0,54 · 0,36</div><div class="hint">CALL DOM. · OGK6 CHG +742</div></div>
+  </div>
+  <div class="scenarios">
+    <div class="sc s1">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-name">HAUSSIER</div></div><div class="sc-pill">BUY-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(0,208,132,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#4bda88" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4bda88" stop-opacity=".22"/><stop offset="100%" stop-color="#4bda88" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,48 56,38 112,26 168,15 224,7 280,2 280,56 0,56" fill="url(#g#4bda88)"/>
+  <polyline points="0,48 56,38 112,26 168,15 224,7 280,2" fill="none" stroke="#4bda88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&gt;4 877 (H session)</strong>Cassure H session · call wall 4 900 visé</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">4 883</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:57%"></div></div><div class="tp-val">4 890</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">4 896</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 900 (EV H)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 4 862</span></div>
+    </div>
+    <div class="sc s2">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-name">BAISSIER</div></div><div class="sc-pill">SELL-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,59,59,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#f39b97" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39b97" stop-opacity=".22"/><stop offset="100%" stop-color="#f39b97" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,8 56,18 112,30 168,40 224,47 280,52 280,56 0,56" fill="url(#g#f39b97)"/>
+  <polyline points="0,8 56,18 112,30 168,40 224,47 280,52" fill="none" stroke="#f39b97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&lt;4 828 (L session)</strong>Cassure L session · put wall 4 800/4 807</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">4 820</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">4 812</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">4 804</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 807 (EV B)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 4 836</span></div>
+    </div>
+    <div class="sc s3">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-name">RANGE</div></div><div class="sc-pill">LIMITS</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,170,0,.06)">
+        <svg viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+          <defs><linearGradient id="gS3GC" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bd790e" stop-opacity=".2"/><stop offset="100%" stop-color="#bd790e" stop-opacity=".03"/></linearGradient></defs>
+          <polygon points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22 280,56 0,56" fill="url(#gS3GC)"/>
+          <polyline points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22" fill="none" stroke="#bd790e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sc-trigger"><strong>4 828 – 4 877</strong>Range · gamma pin 4 850 pivot · biais haussier</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 828 → 4 877</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 4 810</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 877 → 4 828</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 4 895</div></div>
+      </div>
+      <div class="ev-inline"><span>EV H — 4 900</span><span>EV B — 4 807</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-big">4 900</div><div class="ev-sub">Call wall · Range Prév 4 807–4 910 · P/C 0,54</div></div>
+    <div class="ev-cell dn"><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-big">4 807</div><div class="ev-sub">Put wall · VAL J-1 4 800 · OGK6 CHG +742</div></div>
+  </div>
+</div>
+<div class="panel" id="p1">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">ES</div>
+      <div class="inst-info"><h2>S&amp;P 500</h2><div class="sub">E-mini S&amp;P 500 (ES) · EW3J6 2DTE</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 16/04 · 07H17</div>
+      <div class="cpl-big">7 070,25</div>
+      <div class="biais-badge bull">▲ HAUSSIER</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell hg"><div class="label">Gamma Pin</div><div class="val">ES · 7 000</div><div class="hint">CPL +70,3 pts AU-DESSUS · EW3J6 2DTE</div></div>
+    <div class="opt-cell"><div class="label">Put Wall</div><div class="val">6 900 / 6 800</div><div class="hint">plancher options</div></div>
+    <div class="opt-cell"><div class="label">Call Wall</div><div class="val">7 100 / 7 200</div><div class="hint">résistance options</div></div>
+    <div class="opt-cell hr"><div class="label">P/C OI · Vol P/C</div><div class="val">3,04 · 2,36</div><div class="hint">PUT DOM. EXTRÊME ⚠</div></div>
+  </div>
+  <div class="scenarios">
+    <div class="sc s1">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-name">HAUSSIER</div></div><div class="sc-pill">BUY-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(0,208,132,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#4bda88" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4bda88" stop-opacity=".22"/><stop offset="100%" stop-color="#4bda88" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,48 56,38 112,26 168,15 224,7 280,2 280,56 0,56" fill="url(#g#4bda88)"/>
+  <polyline points="0,48 56,38 112,26 168,15 224,7 280,2" fill="none" stroke="#4bda88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&gt;7 082 (H session)</strong>Cassure H session · call wall 7 100 visé · 2DTE</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:35%"></div></div><div class="tp-val">7 088</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:57%"></div></div><div class="tp-val">7 093</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">7 097</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 100 (EV H)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 7 065</span></div>
+    </div>
+    <div class="sc s2">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-name">BAISSIER</div></div><div class="sc-pill">SELL-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,59,59,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#f39b97" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39b97" stop-opacity=".22"/><stop offset="100%" stop-color="#f39b97" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,8 56,18 112,30 168,40 224,47 280,52 280,56 0,56" fill="url(#g#f39b97)"/>
+  <polyline points="0,8 56,18 112,30 168,40 224,47 280,52" fill="none" stroke="#f39b97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&lt;7 060 (L session)</strong>Cassure L session · P/C OI 3,04 EXTRÊME ⚠ · put wall 6 900</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:22%"></div></div><div class="tp-val">7 048</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:48%"></div></div><div class="tp-val">7 025</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:75%"></div></div><div class="tp-val">6 960</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">6 900 (EV B)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 7 070</span></div>
+    </div>
+    <div class="sc s3">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-name">RANGE</div></div><div class="sc-pill">LIMITS</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,170,0,.06)">
+        <svg viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+          <defs><linearGradient id="gS3ES" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bd790e" stop-opacity=".2"/><stop offset="100%" stop-color="#bd790e" stop-opacity=".03"/></linearGradient></defs>
+          <polygon points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22 280,56 0,56" fill="url(#gS3ES)"/>
+          <polyline points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22" fill="none" stroke="#bd790e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sc-trigger"><strong>7 060 – 7 082</strong>Range · GP 7 000 plancher critique · P/C 3,04 ⚠</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 060 → 7 082</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 7 045</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 082 → 7 060</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 7 090</div></div>
+      </div>
+      <div class="ev-inline"><span>EV H — 7 100</span><span>EV B — 6 900</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-big">7 100</div><div class="ev-sub">Call wall · gap up +65 pts · cassure &gt;7 082</div></div>
+    <div class="ev-cell dn"><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-big">6 900</div><div class="ev-sub">Put wall · P/C OI 3,04 EXTRÊME ⚠ · cassure &lt;7 060</div></div>
+  </div>
+</div>
+<div class="panel" id="p2">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">NQ</div>
+      <div class="inst-info"><h2>NASDAQ 100</h2><div class="sub">E-mini NASDAQ (NQ) · QN3J6 2DTE</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 16/04 · 07H17</div>
+      <div class="cpl-big">26 427,25</div>
+      <div class="biais-badge bull">▲ HAUSSIER FORT</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell hg"><div class="label">Gamma Pin</div><div class="val">NQ · 26 000</div><div class="hint">CPL +427 pts AU-DESSUS · GP franchi</div></div>
+    <div class="opt-cell"><div class="label">Put Wall</div><div class="val">25 800 / 25 600</div><div class="hint">plancher options</div></div>
+    <div class="opt-cell"><div class="label">Call Wall</div><div class="val">26 500 / 27 000</div><div class="hint">résistance options</div></div>
+    <div class="opt-cell"><div class="label">P/C OI · Vol P/C</div><div class="val">1,35 · 1,12</div><div class="hint">QN3J6 CHG +3 510 (breakout)</div></div>
+  </div>
+  <div class="scenarios">
+    <div class="sc s1">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-name">HAUSSIER</div></div><div class="sc-pill">BUY-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(0,208,132,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#4bda88" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4bda88" stop-opacity=".22"/><stop offset="100%" stop-color="#4bda88" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,48 56,38 112,26 168,15 224,7 280,2 280,56 0,56" fill="url(#g#4bda88)"/>
+  <polyline points="0,48 56,38 112,26 168,15 224,7 280,2" fill="none" stroke="#4bda88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&gt;26 490 (H session)</strong>Cassure H session · breakout confirmé · call wall 26 500</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">26 530</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">26 560</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">26 600</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 635 (EV H)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 26 380</span></div>
+    </div>
+    <div class="sc s2">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-name">BAISSIER</div></div><div class="sc-pill">SELL-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,59,59,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#f39b97" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39b97" stop-opacity=".22"/><stop offset="100%" stop-color="#f39b97" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,8 56,18 112,30 168,40 224,47 280,52 280,56 0,56" fill="url(#g#f39b97)"/>
+  <polyline points="0,8 56,18 112,30 168,40 224,47 280,52" fill="none" stroke="#f39b97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&lt;26 370 (L session)</strong>Cassure L session · gamma négatif · put wall 25 800</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:22%"></div></div><div class="tp-val">26 220</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:45%"></div></div><div class="tp-val">26 080</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:73%"></div></div><div class="tp-val">25 960</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">25 800 (EV B)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 26 420</span></div>
+    </div>
+    <div class="sc s3">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-name">RANGE</div></div><div class="sc-pill">LIMITS</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,170,0,.06)">
+        <svg viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+          <defs><linearGradient id="gS3NQ" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bd790e" stop-opacity=".2"/><stop offset="100%" stop-color="#bd790e" stop-opacity=".03"/></linearGradient></defs>
+          <polygon points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22 280,56 0,56" fill="url(#gS3NQ)"/>
+          <polyline points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22" fill="none" stroke="#bd790e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sc-trigger"><strong>26 370 – 26 490</strong>Consolidation · biais haussier fort · GP 26 000 franchi</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 370 → 26 490</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 26 300</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 490 → 26 370</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 26 560</div></div>
+      </div>
+      <div class="ev-inline"><span>EV H — 26 635</span><span>EV B — 25 800</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-big">26 635</div><div class="ev-sub">Call wall · GP 26 000 franchi +427 pts · CHG +3 510</div></div>
+    <div class="ev-cell dn"><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-big">25 800</div><div class="ev-sub">Put wall · VAL J-1 25 960 · cassure &lt;26 370</div></div>
+  </div>
+</div>
+<div class="panel" id="p3">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">RTY</div>
+      <div class="inst-info"><h2>RUSSELL 2000</h2><div class="sub">E-mini Russell (RTY) · R3EJ6 2DTE</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 16/04 · 07H17</div>
+      <div class="cpl-big">2 726,0</div>
+      <div class="biais-badge neut">◆ NEUTRE/PIVOT</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell hg"><div class="label">Gamma Pin</div><div class="val">RTY · 2 700</div><div class="hint">CPL +26 pts AU-DESSUS · compression 8,1 pts</div></div>
+    <div class="opt-cell"><div class="label">Put Wall</div><div class="val">2 650 / 2 600</div><div class="hint">plancher options</div></div>
+    <div class="opt-cell"><div class="label">Call Wall</div><div class="val">2 800 / 2 900</div><div class="hint">résistance options</div></div>
+    <div class="opt-cell"><div class="label">P/C OI · Vol P/C</div><div class="val">2,38 · 1,14</div><div class="hint">PUT DOM. · range étroit 2 722–2 730</div></div>
+  </div>
+  <div class="scenarios">
+    <div class="sc s1">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-name">HAUSSIER</div></div><div class="sc-pill">BUY-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(0,208,132,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#4bda88" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4bda88" stop-opacity=".22"/><stop offset="100%" stop-color="#4bda88" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,48 56,38 112,26 168,15 224,7 280,2 280,56 0,56" fill="url(#g#4bda88)"/>
+  <polyline points="0,48 56,38 112,26 168,15 224,7 280,2" fill="none" stroke="#4bda88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&gt;2 730 (H session)</strong>Cassure H session · call wall 2 800 visé</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">2 738</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:53%"></div></div><div class="tp-val">2 746</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">2 775</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 800 (EV H)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 2 724</span></div>
+    </div>
+    <div class="sc s2">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-name">BAISSIER</div></div><div class="sc-pill">SELL-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,59,59,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#f39b97" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39b97" stop-opacity=".22"/><stop offset="100%" stop-color="#f39b97" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,8 56,18 112,30 168,40 224,47 280,52 280,56 0,56" fill="url(#g#f39b97)"/>
+  <polyline points="0,8 56,18 112,30 168,40 224,47 280,52" fill="none" stroke="#f39b97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&lt;2 722 (L session)</strong>Cassure L session · P/C OI 2,38 PUT DOM. · put wall 2 650</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:28%"></div></div><div class="tp-val">2 716</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">2 706</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:75%"></div></div><div class="tp-val">2 675</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 650 (EV B)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 2 725</span></div>
+    </div>
+    <div class="sc s3">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-name">RANGE</div></div><div class="sc-pill">LIMITS</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,170,0,.06)">
+        <svg viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+          <defs><linearGradient id="gS3RTY" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bd790e" stop-opacity=".2"/><stop offset="100%" stop-color="#bd790e" stop-opacity=".03"/></linearGradient></defs>
+          <polygon points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22 280,56 0,56" fill="url(#gS3RTY)"/>
+          <polyline points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22" fill="none" stroke="#bd790e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sc-trigger"><strong>2 722 – 2 730</strong>Neutre · comprimé · GP 2 700 · range 8,1 pts</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 722 → 2 730</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 2 716</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 730 → 2 722</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 2 736</div></div>
+      </div>
+      <div class="ev-inline"><span>EV H — 2 800</span><span>EV B — 2 650</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-big">2 800</div><div class="ev-sub">Call wall · cassure &gt;2 730 (H session)</div></div>
+    <div class="ev-cell dn"><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-big">2 650</div><div class="ev-sub">Put wall · P/C OI 2,38 · cassure &lt;2 722</div></div>
+  </div>
+</div>
+<div class="panel" id="p4">
+  <div class="inst-header">
+    <div class="inst-left">
+      <div class="inst-icon">WTI</div>
+      <div class="inst-info"><h2>CRUDE OIL</h2><div class="sub">WTI Crude Oil (CL) · LOK6 1DTE</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · 16/04 · 07H17</div>
+      <div class="cpl-big">91,68</div>
+      <div class="biais-badge neut">◆ NEUTRE/HAUSSIER FAIBLE</div>
+    </div>
+  </div>
+  <div class="options-row">
+    <div class="opt-cell hg"><div class="label">Gamma Pin</div><div class="val">WTI · 91</div><div class="hint">CPL +0,7 pts AU-DESSUS · LOK6</div></div>
+    <div class="opt-cell"><div class="label">Put Wall</div><div class="val">90 / 85</div><div class="hint">plancher options</div></div>
+    <div class="opt-cell"><div class="label">Call Wall</div><div class="val">95 / 100</div><div class="hint">résistance options</div></div>
+    <div class="opt-cell hg"><div class="label">P/C OI · Vol P/C</div><div class="val">1,09 · 0,82</div><div class="hint">NEUTRE · LON6 CHG +1 206 (put wall 90)</div></div>
+  </div>
+  <div class="scenarios">
+    <div class="sc s1">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S1</div><div class="sc-name">HAUSSIER</div></div><div class="sc-pill">BUY-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(0,208,132,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#4bda88" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4bda88" stop-opacity=".22"/><stop offset="100%" stop-color="#4bda88" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,48 56,38 112,26 168,15 224,7 280,2 280,56 0,56" fill="url(#g#4bda88)"/>
+  <polyline points="0,48 56,38 112,26 168,15 224,7 280,2" fill="none" stroke="#4bda88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&gt;92,40 (H session)</strong>Cassure H session · call wall 95/100 visé</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">93,00</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:53%"></div></div><div class="tp-val">93,50</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">94,00</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">95,0 (EV H)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&lt; 91,90</span></div>
+    </div>
+    <div class="sc s2">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S2</div><div class="sc-name">BAISSIER</div></div><div class="sc-pill">SELL-STOP</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,59,59,.06)">
+        <svg class="sc-curve" viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+  <defs><linearGradient id="g#f39b97" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f39b97" stop-opacity=".22"/><stop offset="100%" stop-color="#f39b97" stop-opacity=".03"/></linearGradient></defs>
+  <polygon points="0,8 56,18 112,30 168,40 224,47 280,52 280,56 0,56" fill="url(#g#f39b97)"/>
+  <polyline points="0,8 56,18 112,30 168,40 224,47 280,52" fill="none" stroke="#f39b97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+      </div>
+      <div class="sc-trigger"><strong>&lt;91,05 (L session)</strong>Cassure L session · put wall 90 actif (LON6 CHG +1 206)</div>
+      <div class="tp-rows"><div class="tp-row"><div class="tp-lbl">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:30%"></div></div><div class="tp-val">90,50</div></div><div class="tp-row"><div class="tp-lbl">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:55%"></div></div><div class="tp-val">90,00</div></div><div class="tp-row"><div class="tp-lbl">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:78%"></div></div><div class="tp-val">89,50</div></div><div class="tp-row"><div class="tp-lbl">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">88,28 (EV B)</div></div></div>
+      <div class="sl-row"><span>STOP LOSS</span><span>&gt; 91,20</span></div>
+    </div>
+    <div class="sc s3">
+      <div class="sc-head"><div class="sc-label"><div class="sc-num">S3</div><div class="sc-name">RANGE</div></div><div class="sc-pill">LIMITS</div></div>
+      <div style="border-radius:4px;margin:0 0 10px;overflow:hidden;background:rgba(255,170,0,.06)">
+        <svg viewBox="0 0 280 56" preserveAspectRatio="none" style="width:100%;height:52px;display:block">
+          <defs><linearGradient id="gS3WTI" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#bd790e" stop-opacity=".2"/><stop offset="100%" stop-color="#bd790e" stop-opacity=".03"/></linearGradient></defs>
+          <polygon points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22 280,56 0,56" fill="url(#gS3WTI)"/>
+          <polyline points="0,28 40,20 80,28 120,20 160,28 200,20 240,28 280,22" fill="none" stroke="#bd790e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="sc-trigger"><strong>91,05 – 92,40</strong>Neutre pivot GP 91 · LON6 +1 206 put wall 90</div>
+      <div class="tp-rows">
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">91,05 → 92,40</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&lt; 90,50</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">92,40 → 91,05</div></div>
+        <div class="tp-row"><div class="tp-lbl" style="color:#fde68a">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:25%"></div></div><div class="tp-val">&gt; 93,00</div></div>
+      </div>
+      <div class="ev-inline"><span>EV H — 95</span><span>EV B — 88,28</span></div>
+    </div>
+  </div>
+  <div class="ev-row">
+    <div class="ev-cell up"><div class="ev-label">ESPÉRANCE HAUSSIÈRE</div><div class="ev-pill">EV+</div><div class="ev-big">95</div><div class="ev-sub">Call wall · Range Prév 88,28–95,08 · Vol P/C 0,82</div></div>
+    <div class="ev-cell dn"><div class="ev-label">ESPÉRANCE BAISSIÈRE</div><div class="ev-pill">EV−</div><div class="ev-big">88,28</div><div class="ev-sub">Put wall · LON6 CHG +1 206 · cassure &lt;91,05</div></div>
+  </div>
+</div>
+</main>
+<footer>
+  <span>KAM INC. · 16/04/2026 · 07H17 · CONFIDENTIEL</span>
+  <span>#1 GC · #2 ES · #3 NQ · #4 RTY · #5 WTI</span>
+  <span>50% TP1 / 50% TP2 · BE dès TP1</span>
+</footer>
+<script>
+const T=['bull','bull','bull','neut','neut'];
+function show(n){
+  document.querySelectorAll('.panel').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.classList.remove('active','bull','neut');
+    if(i===n) t.classList.add('active',T[i]);
+  });
+}
+</script>
+</body>
+</html>
