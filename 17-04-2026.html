@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="KAM INC. — Ma réflexion du jour · 17/04/2026">
+<meta property="og:description" content="Analyse intraday · GC #1 HAUSSIER FAIBLE · ES #2 HAUSSIER · NQ #3 HAUSSIER FORT · RTY #4 HAUSSIER · WTI #5 BAISSIER FAIBLE · 07H16 CET">
+<meta property="og:image" content="https://jck-jira.github.io/KAM_Reflexion/og-17042026.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jck-jira.github.io/KAM_Reflexion/og-17042026.png">
+<title>KAM INC. — Ma réflexion du jour · 17/04/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0f1e;
+  --bg2:#151c2e;
+  --bg3:#1a2038;
+  --bg4:#0a0d1a;
+  --border:#1e2540;
+  --border2:#24293c;
+  --gold:#ff8c00;
+  --gold2:#ffaa33;
+  --green:#4bda88;
+  --green-bg:#042e16;
+  --green-border:#1d6b3a;
+  --red:#f39b97;
+  --red-bg:#2d0607;
+  --red-border:#6e1a1a;
+  --amber:#bd790e;
+  --amber-bg:#141004;
+  --amber-border:#4a3418;
+  --text:#e8edf5;
+  --muted:#3a4870;
+  --sub:#5a6a90;
+  --blue:#7fb3ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+.header{background:var(--bg4);border-bottom:1px solid #1c2a3e;padding:14px 28px}
+.header-top{display:flex;justify-content:space-between;align-items:center}
+.header-left .meta{font-size:10px;color:var(--muted);letter-spacing:.8px;font-weight:500;margin-bottom:4px;text-transform:uppercase}
+.title{display:flex;gap:10px;align-items:baseline}
+.title h1{font-size:24px;font-weight:600;color:var(--text);line-height:1}
+.title h1 span{color:var(--gold2)}
+.kam-badge{background:#0a1828;border:1px solid var(--gold);padding:4px 12px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;border-radius:3px;display:flex;align-items:center;gap:6px;margin-top:4px}
+.time-badge{font-size:11px;color:var(--sub);text-align:right;letter-spacing:.3px}
+
+main{padding:18px 28px;max-width:1320px;margin:0 auto}
+
+/* ─── 5-CARD GRID ─── */
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
+
+.card{
+  background:var(--bg2);
+  border:1px solid var(--border2);
+  border-radius:8px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.card.bull{border-top:3px solid var(--green)}
+.card.bear{border-top:3px solid var(--red)}
+.card.neut{border-top:3px solid var(--amber)}
+
+.card-hdr{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 14px;background:rgba(0,0,0,.2);border-bottom:1px solid var(--border);
+}
+.rank{font-size:10px;font-weight:700;color:var(--gold2);letter-spacing:1px}
+.sym{font-size:13px;font-weight:700;color:var(--text);letter-spacing:.5px}
+
+.card-body{padding:14px;flex:1;display:flex;flex-direction:column;gap:10px}
+
+.cpl-row{text-align:center}
+.cpl-lbl{font-size:9px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px}
+.cpl-val{font-size:28px;font-weight:700;color:var(--blue);letter-spacing:-0.5px;font-variant-numeric:tabular-nums;line-height:1}
+
+.biais-badge{
+  display:block;text-align:center;
+  padding:5px 8px;border-radius:3px;
+  font-size:9px;font-weight:800;letter-spacing:.8px;
+  border:1px solid;text-transform:uppercase;
+}
+.biais-badge.bull{background:var(--green-bg);color:var(--green);border-color:var(--green)}
+.biais-badge.bear{background:var(--red-bg);color:var(--red);border-color:var(--red)}
+.biais-badge.neut{background:var(--amber-bg);color:var(--amber);border-color:var(--amber)}
+
+/* EV H / EV B big numbers */
+.ev-block{display:flex;flex-direction:column;gap:8px;padding:6px 0}
+.ev-cell{display:flex;justify-content:space-between;align-items:center}
+.ev-cell .ev-lbl{font-size:9px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;font-weight:700}
+.ev-cell .ev-val{font-size:22px;font-weight:700;letter-spacing:-0.3px;font-variant-numeric:tabular-nums;line-height:1}
+.ev-h .ev-val{color:var(--green)}
+.ev-b .ev-val{color:var(--red)}
+
+/* Scenario triggers compact */
+.sc-lines{display:flex;flex-direction:column;gap:4px;padding:8px 10px;background:rgba(0,0,0,.25);border-radius:5px}
+.sc-line{display:flex;align-items:center;gap:6px;font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+.sc-line .arr{font-size:13px;font-weight:800;width:14px;text-align:center}
+.sc-line.s1 .arr{color:var(--green)}
+.sc-line.s2 .arr{color:var(--red)}
+.sc-line .trig{font-weight:700}
+.sc-line.s1 .trig{color:var(--green)}
+.sc-line.s2 .trig{color:var(--red)}
+.sc-line .sep{color:var(--muted);font-size:10px}
+.sc-line .tgt{color:var(--sub);font-weight:600}
+
+/* Gamma Pin footer */
+.gp-row{
+  background:rgba(218,180,71,.08);border:1px solid rgba(218,180,71,.25);
+  border-radius:4px;padding:5px 8px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:10px;font-weight:700;color:#dab447;letter-spacing:.5px;text-transform:uppercase;
+}
+.gp-row .gp-val{font-variant-numeric:tabular-nums;letter-spacing:.2px}
+
+footer{background:var(--bg4);border-top:1px solid var(--border);padding:10px 28px;display:flex;justify-content:space-between;font-size:9px;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="header-left">
+      <div class="meta">ANALYSE INTRADAY · 17 AVRIL 2026</div>
+      <div class="title"><h1>Ma réflexion <span>du jour</span></h1></div>
+    </div>
+    <div>
+      <div class="time-badge">07H16 CET</div>
+      <div class="kam-badge">🏛 KAM INC.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<div class="grid">
+
+  <!-- #1 GC -->
+  <div class="card bull">
+    <div class="card-hdr"><span class="rank">#1</span><span class="sym">GC</span></div>
+    <div class="card-body">
+      <div class="cpl-row">
+        <div class="cpl-lbl">CPL · 17/04 · 07H16</div>
+        <div class="cpl-val">4 823,7</div>
+      </div>
+      <div class="biais-badge bull">▲ HAUSSIER FAIBLE</div>
+      <div class="ev-block">
+        <div class="ev-cell ev-h"><span class="ev-lbl">EV H</span><span class="ev-val">4 900</span></div>
+        <div class="ev-cell ev-b"><span class="ev-lbl">EV B</span><span class="ev-val">4 700</span></div>
+      </div>
+      <div class="sc-lines">
+        <div class="sc-line s1"><span class="arr">↑</span><span class="trig">&gt; 4 845</span><span class="sep">→</span><span class="tgt">4 900</span></div>
+        <div class="sc-line s2"><span class="arr">↓</span><span class="trig">&lt; 4 804</span><span class="sep">→</span><span class="tgt">4 700</span></div>
+      </div>
+      <div class="gp-row"><span>GP</span><span class="gp-val">4 800</span></div>
+    </div>
+  </div>
+
+  <!-- #2 ES -->
+  <div class="card bull">
+    <div class="card-hdr"><span class="rank">#2</span><span class="sym">ES</span></div>
+    <div class="card-body">
+      <div class="cpl-row">
+        <div class="cpl-lbl">CPL · 17/04 · 07H16</div>
+        <div class="cpl-val">7 077,75</div>
+      </div>
+      <div class="biais-badge bull">▲ HAUSSIER</div>
+      <div class="ev-block">
+        <div class="ev-cell ev-h"><span class="ev-lbl">EV H</span><span class="ev-val">7 150</span></div>
+        <div class="ev-cell ev-b"><span class="ev-lbl">EV B</span><span class="ev-val">7 000</span></div>
+      </div>
+      <div class="sc-lines">
+        <div class="sc-line s1"><span class="arr">↑</span><span class="trig">&gt; 7 082</span><span class="sep">→</span><span class="tgt">7 150</span></div>
+        <div class="sc-line s2"><span class="arr">↓</span><span class="trig">&lt; 7 072</span><span class="sep">→</span><span class="tgt">7 000</span></div>
+      </div>
+      <div class="gp-row"><span>GP</span><span class="gp-val">7 000</span></div>
+    </div>
+  </div>
+
+  <!-- #3 NQ -->
+  <div class="card bull">
+    <div class="card-hdr"><span class="rank">#3</span><span class="sym">NQ</span></div>
+    <div class="card-body">
+      <div class="cpl-row">
+        <div class="cpl-lbl">CPL · 17/04 · 07H16</div>
+        <div class="cpl-val">26 457,25</div>
+      </div>
+      <div class="biais-badge bull">▲ HAUSSIER FORT</div>
+      <div class="ev-block">
+        <div class="ev-cell ev-h"><span class="ev-lbl">EV H</span><span class="ev-val">26 700</span></div>
+        <div class="ev-cell ev-b"><span class="ev-lbl">EV B</span><span class="ev-val">26 000</span></div>
+      </div>
+      <div class="sc-lines">
+        <div class="sc-line s1"><span class="arr">↑</span><span class="trig">&gt; 26 490</span><span class="sep">→</span><span class="tgt">26 700</span></div>
+        <div class="sc-line s2"><span class="arr">↓</span><span class="trig">&lt; 26 432</span><span class="sep">→</span><span class="tgt">26 000</span></div>
+      </div>
+      <div class="gp-row"><span>GP</span><span class="gp-val">26 000</span></div>
+    </div>
+  </div>
+
+  <!-- #4 RTY -->
+  <div class="card bull">
+    <div class="card-hdr"><span class="rank">#4</span><span class="sym">RTY</span></div>
+    <div class="card-body">
+      <div class="cpl-row">
+        <div class="cpl-lbl">CPL · 17/04 · 07H16</div>
+        <div class="cpl-val">2 734,0</div>
+      </div>
+      <div class="biais-badge bull">▲ HAUSSIER</div>
+      <div class="ev-block">
+        <div class="ev-cell ev-h"><span class="ev-lbl">EV H</span><span class="ev-val">2 780</span></div>
+        <div class="ev-cell ev-b"><span class="ev-lbl">EV B</span><span class="ev-val">2 700</span></div>
+      </div>
+      <div class="sc-lines">
+        <div class="sc-line s1"><span class="arr">↑</span><span class="trig">&gt; 2 737</span><span class="sep">→</span><span class="tgt">2 780</span></div>
+        <div class="sc-line s2"><span class="arr">↓</span><span class="trig">&lt; 2 731</span><span class="sep">→</span><span class="tgt">2 700</span></div>
+      </div>
+      <div class="gp-row"><span>GP</span><span class="gp-val">2 700</span></div>
+    </div>
+  </div>
+
+  <!-- #5 WTI -->
+  <div class="card bear">
+    <div class="card-hdr"><span class="rank">#5</span><span class="sym">WTI</span></div>
+    <div class="card-body">
+      <div class="cpl-row">
+        <div class="cpl-lbl">CPL · 17/04 · 07H16</div>
+        <div class="cpl-val">89,56</div>
+      </div>
+      <div class="biais-badge bear">▼ BAISSIER FAIBLE</div>
+      <div class="ev-block">
+        <div class="ev-cell ev-h"><span class="ev-lbl">EV H</span><span class="ev-val">93,50</span></div>
+        <div class="ev-cell ev-b"><span class="ev-lbl">EV B</span><span class="ev-val">85</span></div>
+      </div>
+      <div class="sc-lines">
+        <div class="sc-line s1"><span class="arr">↑</span><span class="trig">&gt; 89,95</span><span class="sep">→</span><span class="tgt">93,50</span></div>
+        <div class="sc-line s2"><span class="arr">↓</span><span class="trig">&lt; 89,19</span><span class="sep">→</span><span class="tgt">85</span></div>
+      </div>
+      <div class="gp-row"><span>GP</span><span class="gp-val">90</span></div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <span>KAM INC. · 17/04/2026 · 07H16 CET · CONFIDENTIEL</span>
+  <span>#1 GC · #2 ES · #3 NQ · #4 RTY · #5 WTI</span>
+  <span>50% TP1 / 50% TP2 · BE dès TP1</span>
+</footer>
+
+</body>
+</html>
