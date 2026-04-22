@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAM INC. · Plan de Trading · 22/04/2026</title>
+
+<!-- Open Graph - forces LARGE image card on Discord/Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="KAM INC. Plan de Trading · 22/04/2026 · 08H30 CET">
+<meta property="og:description" content="🔼 WTI #1 HAUSSIER · 🔽 GC #2 BAISSIER · ↔️ ES #3 NEUTRE/BAISSIER FAIBLE · ↔️ NQ #4 NEUTRE/BAISSIER FAIBLE · ↔️ RTY #5 NEUTRE/PIVOT">
+<meta property="og:url" content="https://jck-jira.github.io/KAM_Reflexion/22042026.html">
+<meta property="og:image" content="https://jck-jira.github.io/KAM_Reflexion/og-22042026.png">
+<meta property="og:image:secure_url" content="https://jck-jira.github.io/KAM_Reflexion/og-22042026.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KAM INC. Plan de Trading Intraday 22/04/2026">
+<meta property="og:site_name" content="KAM Studio Inc.">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card - ensures large card rendering -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KAM INC. Plan de Trading · 22/04/2026">
+<meta name="twitter:description" content="🔼 WTI #1 HAUSSIER · 🔽 GC #2 BAISSIER · ↔️ ES #3 NT/BAISSIER FAIBLE · ↔️ NQ #4 NT/BAISSIER FAIBLE · ↔️ RTY #5 NT/PIVOT">
+<meta name="twitter:image" content="https://jck-jira.github.io/KAM_Reflexion/og-22042026.png">
+
+<meta name="theme-color" content="#d4af37">
+<meta name="description" content="KAM INC. Konda Asset Management - Plan de Trading Intraday 22/04/2026 - Session 0DTE MERCREDI - 08H30 CET">
+
+<style>
+:root { --bg:#0b0f1a; --panel:#121826; --panel2:#1a2336; --line:#293449;
+  --text:#e6edf7; --muted:#8ea0bf; --gold:#d4af37;
+  --bull:#22c55e; --bear:#ef4444; --neut:#fbbf24; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text); padding: 24px; min-height: 100vh;
+  background-image: radial-gradient(ellipse at top, rgba(212,175,55,0.04) 0%, transparent 60%); }
+.container { max-width: 1280px; margin: 0 auto; }
+.header { display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-square { width: 28px; height: 28px; background: var(--gold); border-radius: 4px; }
+.brand-name { font-size: 20px; font-weight: 700; color: var(--gold); letter-spacing: 1.2px; }
+.brand-sub { color: var(--muted); font-size: 12px; font-weight: 400; letter-spacing: 0.4px; margin-left: 6px; }
+.date-time { color: var(--muted); font-size: 13px; text-align: right; }
+.date-time strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 2px; }
+
+.priority-banner { display: flex; gap: 6px; padding: 14px 18px; margin-bottom: 18px;
+  background: linear-gradient(90deg, var(--panel) 0%, var(--panel2) 100%);
+  border-left: 4px solid var(--gold); border-radius: 8px; overflow-x: auto; flex-wrap: wrap; }
+.priority-banner .label { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
+  margin-right: 14px; align-self: center; text-transform: uppercase; }
+.priority-banner .chip { display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; background: var(--panel2); border-radius: 6px; font-size: 12px; font-weight: 600;
+  border: 1px solid transparent; white-space: nowrap; }
+.priority-banner .chip.bull { border-color: var(--bull); color: var(--bull); }
+.priority-banner .chip.bear { border-color: var(--bear); color: var(--bear); }
+.priority-banner .chip.neut { border-color: var(--neut); color: var(--neut); }
+
+.tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tab { padding: 12px 20px; cursor: pointer; color: var(--muted); font-size: 13px; font-weight: 600;
+  border-bottom: 2px solid transparent; transition: all 0.15s; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.tab:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+.tab.active { color: var(--text); }
+.tab.active.bull { border-bottom-color: var(--bull); color: var(--bull); }
+.tab.active.bear { border-bottom-color: var(--bear); color: var(--bear); }
+.tab.active.neut { border-bottom-color: var(--neut); color: var(--neut); }
+.tab .prio { font-size: 10px; padding: 2px 6px; background: var(--panel2); border-radius: 3px; letter-spacing: 0.5px; }
+
+.panel { display: none; }
+.panel.active { display: block; animation: fadein 0.25s; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+.inst-header { display: flex; justify-content: space-between; align-items: flex-start;
+  background: var(--panel); padding: 22px 26px; border-radius: 12px; margin-bottom: 16px;
+  border: 1px solid var(--line); }
+.inst-header.bull { border-left: 4px solid var(--bull); }
+.inst-header.bear { border-left: 4px solid var(--bear); }
+.inst-header.neut { border-left: 4px solid var(--neut); }
+.inst-left { display: flex; align-items: center; gap: 16px; }
+.inst-icon { width: 64px; height: 64px; background: var(--panel2); border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 1px solid var(--line); }
+.inst-icon .sym { font-weight: 800; font-size: 16px; color: var(--gold); letter-spacing: 0.5px; }
+.inst-icon .prio { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.inst-info h2 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.inst-info .sub { color: var(--muted); font-size: 12px; }
+.inst-right { text-align: right; }
+.cpl-label { color: var(--muted); font-size: 10px; letter-spacing: 0.8px; text-transform: uppercase; }
+.cpl-big { font-size: 36px; font-weight: 800; font-family: 'SF Mono', 'Courier New', Menlo, monospace;
+  color: var(--gold); margin: 4px 0; line-height: 1; }
+.biais-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px;
+  border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-top: 6px; }
+.biais-badge.bull { background: rgba(34,197,94,0.15); color: var(--bull); border: 1px solid rgba(34,197,94,0.3); }
+.biais-badge.bear { background: rgba(239,68,68,0.15); color: var(--bear); border: 1px solid rgba(239,68,68,0.3); }
+.biais-badge.neut { background: rgba(251,191,36,0.15); color: var(--neut); border: 1px solid rgba(251,191,36,0.3); }
+
+.options-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.opt-cell { background: var(--panel); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--line);
+  transition: all 0.15s; }
+.opt-cell.key { border-color: var(--gold); background: linear-gradient(135deg, var(--panel) 0%, rgba(212,175,55,0.06) 100%); }
+.opt-cell .label { color: var(--muted); font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 6px; }
+.opt-cell .val { font-size: 20px; font-weight: 700; font-family: 'SF Mono', Menlo, monospace;
+  color: var(--gold); margin-bottom: 4px; }
+.opt-cell .hint { color: var(--muted); font-size: 10px; }
+
+.scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.scenario { background: var(--panel); padding: 16px 18px; border-radius: 10px; border: 1px solid var(--line); }
+.scenario.s1 { border-left: 3px solid var(--bull); }
+.scenario.s2 { border-left: 3px solid var(--bear); }
+.scenario.s3 { grid-column: 1 / -1; border-left: 3px solid var(--gold);
+  background: linear-gradient(135deg, var(--panel) 0%, rgba(212,175,55,0.04) 100%); }
+.sc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sc-title { font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+.scenario.s1 .sc-title { color: var(--bull); }
+.scenario.s2 .sc-title { color: var(--bear); }
+.scenario.s3 .sc-title { color: var(--gold); }
+.sc-cond { color: var(--muted); font-size: 11px; margin-bottom: 12px; line-height: 1.5; }
+.tp-row { display: grid; grid-template-columns: 40px 1fr 100px; gap: 8px; align-items: center; margin-bottom: 5px; font-size: 11px; }
+.tp-label { color: var(--muted); font-weight: 700; font-family: 'SF Mono', Menlo, monospace; }
+.tp-bar-wrap { background: var(--panel2); height: 6px; border-radius: 3px; overflow: hidden; }
+.scenario.s1 .tp-bar { background: linear-gradient(90deg, var(--bull), #34d399); height: 100%; }
+.scenario.s2 .tp-bar { background: linear-gradient(90deg, var(--bear), #f87171); height: 100%; }
+.scenario.s3 .tp-bar { background: linear-gradient(90deg, var(--gold), #fbbf24); height: 100%; }
+.tp-val { text-align: right; font-family: 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--text); font-weight: 600; }
+
+.zones-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.zone-cell { background: var(--panel); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--line); }
+.zone-cell .zlabel { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
+.zone-cell .zval { font-family: 'SF Mono', Menlo, monospace; color: var(--text); font-size: 14px; font-weight: 700; }
+
+.footer { text-align: center; color: var(--muted); font-size: 10px; padding: 24px 0 0;
+  border-top: 1px solid var(--line); margin-top: 24px; line-height: 1.8; }
+.footer a { color: var(--gold); text-decoration: none; }
+
+@media (max-width: 768px) {
+  .options-grid, .zones-grid { grid-template-columns: repeat(2, 1fr); }
+  .scenarios { grid-template-columns: 1fr; }
+  .scenario.s3 { grid-column: 1; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand"><div class="brand-square"></div><div><div class="brand-name">KAM STUDIO INC.</div><div class="brand-sub">Konda Asset Management · Intraday Futures Desk</div></div></div>
+    <div class="date-time"><strong>22 AVRIL 2026</strong>08H30 CET · 0DTE MERCREDI</div>
+  </div>
+
+  <div class="priority-banner">
+    <div class="label">Priorité du jour</div>
+    <div class="chip bull">🔼 #1 WTI · HAUSSIER</div><div class="chip bear">🔽 #2 GC · BAISSIER</div><div class="chip neut">↔️ #3 ES · NEUTRE/BAISSIER FAIBLE</div><div class="chip neut">↔️ #4 NQ · NEUTRE/BAISSIER FAIBLE</div><div class="chip neut">↔️ #5 RTY · NEUTRE/PIVOT</div>
+  </div>
+
+  <div class="tabs"><div class="tab active bull" onclick="showPanel('WTI', this)"><span class="prio">#1</span>WTI</div><div class="tab bear" onclick="showPanel('GC', this)"><span class="prio">#2</span>GC</div><div class="tab neut" onclick="showPanel('ES', this)"><span class="prio">#3</span>ES</div><div class="tab neut" onclick="showPanel('NQ', this)"><span class="prio">#4</span>NQ</div><div class="tab neut" onclick="showPanel('RTY', this)"><span class="prio">#5</span>RTY</div></div>
+  
+<div class="panel active" id="p-WTI">
+  <div class="inst-header bull">
+    <div class="inst-left">
+      <div class="inst-icon"><div class="sym">WTI</div><div class="prio">#1</div></div>
+      <div class="inst-info"><h2>CRUDE OIL</h2><div class="sub">CRUDE OIL · WL4J6 · Session 22/04/2026 · 08H30 CET</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · Prix actuel</div>
+      <div class="cpl-big">89,49</div>
+      <div class="biais-badge bull">▲ HAUSSIER</div>
+    </div>
+  </div>
+
+  <div class="options-grid">
+    <div class="opt-cell key">
+      <div class="label">Gamma Pin</div>
+      <div class="val">89</div>
+      <div class="hint">+0,49 pts · au-dessus CPL</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="val">87/85</div>
+      <div class="hint">support · EV B 85</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="val">90/95</div>
+      <div class="hint">résistance · EV H 95</div>
+    </div>
+    <div class="opt-cell key">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="val">1,04 / 0,56</div>
+      <div class="hint">CALL DOM. Vol P/C 0,56 - P/C OI 1,04 équilibré. Flux recovery : LOM6 +194 calls @90 (cap reconstruct</div>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-head"><div class="sc-title">✅ S1 · LONG · Cassure H &gt;90</div></div>
+      <div class="sc-cond">Buy-stop au-dessus H session · clôture M5 &gt;90 · volume confirmé · cible EV H 95</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">91</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">92,5</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">94</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">95 (EV H)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&lt; 88,5</div></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-head"><div class="sc-title">🚨 S2 · SHORT · Cassure L &lt;88,05</div></div>
+      <div class="sc-cond">Sell-stop sous L session · gamma négatif actif · put wall 87 actif · cible EV B 85</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">87</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">86</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">85,5</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">85 (EV B)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&gt; 89,2</div></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-head"><div class="sc-title">⚠️ S3 · RANGE · Consolidation 88,05–90</div></div>
+      <div class="sc-cond">Scalps bas de range (LONG) · Scalps haut de range (SHORT)</div>
+      <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">88,05 → 90</div></div><div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">90 → 88,05</div></div>
+    </div>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone-cell"><div class="zlabel">POC J-1</div><div class="zval">87</div></div>
+    <div class="zone-cell"><div class="zlabel">VAH / VAL J-1</div><div class="zval">91 / 86</div></div>
+    <div class="zone-cell"><div class="zlabel">Range Prévisionnel</div><div class="zval">86,77 – 92,21</div></div>
+  </div>
+</div>
+<div class="panel" id="p-GC">
+  <div class="inst-header bear">
+    <div class="inst-left">
+      <div class="inst-icon"><div class="sym">GC</div><div class="prio">#2</div></div>
+      <div class="inst-info"><h2>GOLD</h2><div class="sub">GOLD · OGK6 · Session 22/04/2026 · 08H30 CET</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · Prix actuel</div>
+      <div class="cpl-big">4 772,7</div>
+      <div class="biais-badge bear">▼ BAISSIER</div>
+    </div>
+  </div>
+
+  <div class="options-grid">
+    <div class="opt-cell key">
+      <div class="label">Gamma Pin</div>
+      <div class="val">4 800</div>
+      <div class="hint">-27,3 pts · sous CPL</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="val">4 700/4 650</div>
+      <div class="hint">support · EV B 4 700</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="val">4 900/4 950</div>
+      <div class="hint">résistance · EV H 4 900</div>
+    </div>
+    <div class="opt-cell key">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="val">0,55 / 0,53</div>
+      <div class="hint">CALL DOM. (P/C OI 0,55) - flux 6DTE OGK6 CHG +407 @4750 floor build</div>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-head"><div class="sc-title">✅ S1 · LONG · Cassure H &gt;4 782</div></div>
+      <div class="sc-cond">Buy-stop au-dessus H session · clôture M5 &gt;4 782 · volume confirmé · cible EV H 4 900</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">4 800</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">4 830</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">4 865</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 900 (EV H)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&lt; 4 760</div></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-head"><div class="sc-title">🚨 S2 · SHORT · Cassure L &lt;4 732</div></div>
+      <div class="sc-cond">Sell-stop sous L session · gamma négatif actif · put wall 4 700 actif · cible EV B 4 700</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">4 720</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">4 710</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">4 705</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 700 (EV B)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&gt; 4 752</div></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-head"><div class="sc-title">⚠️ S3 · RANGE · Consolidation 4 732–4 782</div></div>
+      <div class="sc-cond">Scalps bas de range (LONG) · Scalps haut de range (SHORT)</div>
+      <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 732 → 4 782</div></div><div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">4 782 → 4 732</div></div>
+    </div>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone-cell"><div class="zlabel">POC J-1</div><div class="zval">4 800</div></div>
+    <div class="zone-cell"><div class="zlabel">VAH / VAL J-1</div><div class="zval">4 830 / 4 736</div></div>
+    <div class="zone-cell"><div class="zlabel">Range Prévisionnel</div><div class="zval">4 717 – 4 828</div></div>
+  </div>
+</div>
+<div class="panel" id="p-ES">
+  <div class="inst-header neut">
+    <div class="inst-left">
+      <div class="inst-icon"><div class="sym">ES</div><div class="prio">#3</div></div>
+      <div class="inst-info"><h2>S&P 500</h2><div class="sub">S&P 500 · E4CJ6 · Session 22/04/2026 · 08H30 CET</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · Prix actuel</div>
+      <div class="cpl-big">7 133,25</div>
+      <div class="biais-badge neut">◆ NEUTRE/BAISSIER FAIBLE</div>
+    </div>
+  </div>
+
+  <div class="options-grid">
+    <div class="opt-cell key">
+      <div class="label">Gamma Pin</div>
+      <div class="val">7 150</div>
+      <div class="hint">-16,75 pts · sous CPL</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="val">7 100/7 000</div>
+      <div class="hint">support · EV B 7 050</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="val">7 200/7 250</div>
+      <div class="hint">résistance · EV H 7 200</div>
+    </div>
+    <div class="opt-cell key">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="val">2,94 / 2,34</div>
+      <div class="hint">PUT DOM. EXTRÊME - P/C OI 2,94 (hedge massif). Flux 0DTE E4CJ6 P/C 1,66 (intraday équilibré). E4CJ6 </div>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-head"><div class="sc-title">✅ S1 · LONG · Cassure H &gt;7 143</div></div>
+      <div class="sc-cond">Buy-stop au-dessus H session · clôture M5 &gt;7 143 · volume confirmé · cible EV H 7 200</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">7 150</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">7 175</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">7 190</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 200 (EV H)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&lt; 7 125</div></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-head"><div class="sc-title">🚨 S2 · SHORT · Cassure L &lt;7 121,25</div></div>
+      <div class="sc-cond">Sell-stop sous L session · gamma négatif actif · put wall 7 100 actif · cible EV B 7 050</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">7 110</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">7 100</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">7 075</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 050 (EV B)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&gt; 7 138</div></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-head"><div class="sc-title">⚠️ S3 · RANGE · Consolidation 7 121,25–7 143</div></div>
+      <div class="sc-cond">Scalps bas de range (LONG) · Scalps haut de range (SHORT)</div>
+      <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 121,25 → 7 143</div></div><div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">7 143 → 7 121,25</div></div>
+    </div>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone-cell"><div class="zlabel">POC J-1</div><div class="zval">7 160</div></div>
+    <div class="zone-cell"><div class="zlabel">VAH / VAL J-1</div><div class="zval">7 180 / 7 125</div></div>
+    <div class="zone-cell"><div class="zlabel">Range Prévisionnel</div><div class="zval">7 093 – 7 173</div></div>
+  </div>
+</div>
+<div class="panel" id="p-NQ">
+  <div class="inst-header neut">
+    <div class="inst-left">
+      <div class="inst-icon"><div class="sym">NQ</div><div class="prio">#4</div></div>
+      <div class="inst-info"><h2>NASDAQ</h2><div class="sub">NASDAQ · Q4CJ6 · Session 22/04/2026 · 08H30 CET</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · Prix actuel</div>
+      <div class="cpl-big">26 792,5</div>
+      <div class="biais-badge neut">◆ NEUTRE/BAISSIER FAIBLE</div>
+    </div>
+  </div>
+
+  <div class="options-grid">
+    <div class="opt-cell key">
+      <div class="label">Gamma Pin</div>
+      <div class="val">26 800</div>
+      <div class="hint">-7,5 pts · sous CPL</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="val">26 500/26 300</div>
+      <div class="hint">support · EV B 26 500</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="val">26 900/27 000</div>
+      <div class="hint">résistance · EV H 27 000</div>
+    </div>
+    <div class="opt-cell key">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="val">1,30 / 1,33</div>
+      <div class="hint">PUT DOM. modéré P/C OI 1,30 / Vol P/C 1,33 (équilibré intraday). Q4CJ6 0DTE call build @26 900 (+147</div>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-head"><div class="sc-title">✅ S1 · LONG · Cassure H &gt;26 850</div></div>
+      <div class="sc-cond">Buy-stop au-dessus H session · clôture M5 &gt;26 850 · volume confirmé · cible EV H 27 000</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">26 900</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">26 950</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">26 980</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">27 000 (EV H)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&lt; 26 780</div></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-head"><div class="sc-title">🚨 S2 · SHORT · Cassure L &lt;26 740</div></div>
+      <div class="sc-cond">Sell-stop sous L session · gamma négatif actif · put wall 26 500 actif · cible EV B 26 500</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">26 700</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">26 650</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">26 600</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 500 (EV B)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&gt; 26 820</div></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-head"><div class="sc-title">⚠️ S3 · RANGE · Consolidation 26 740–26 850</div></div>
+      <div class="sc-cond">Scalps bas de range (LONG) · Scalps haut de range (SHORT)</div>
+      <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 740 → 26 850</div></div><div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">26 850 → 26 740</div></div>
+    </div>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone-cell"><div class="zlabel">POC J-1</div><div class="zval">26 720</div></div>
+    <div class="zone-cell"><div class="zlabel">VAH / VAL J-1</div><div class="zval">26 900 / 26 550</div></div>
+    <div class="zone-cell"><div class="zlabel">Range Prévisionnel</div><div class="zval">26 620 – 26 965</div></div>
+  </div>
+</div>
+<div class="panel" id="p-RTY">
+  <div class="inst-header neut">
+    <div class="inst-left">
+      <div class="inst-icon"><div class="sym">RTY</div><div class="prio">#5</div></div>
+      <div class="inst-info"><h2>RUSSELL</h2><div class="sub">RUSSELL · R4CJ6 · Session 22/04/2026 · 08H30 CET</div></div>
+    </div>
+    <div class="inst-right">
+      <div class="cpl-label">CPL · Prix actuel</div>
+      <div class="cpl-big">2 797,1</div>
+      <div class="biais-badge neut">◆ NEUTRE/PIVOT</div>
+    </div>
+  </div>
+
+  <div class="options-grid">
+    <div class="opt-cell key">
+      <div class="label">Gamma Pin</div>
+      <div class="val">2 800</div>
+      <div class="hint">-2,9 pts · sous CPL</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Put Wall</div>
+      <div class="val">2 750/2 700</div>
+      <div class="hint">support · EV B 2 700</div>
+    </div>
+    <div class="opt-cell">
+      <div class="label">Call Wall</div>
+      <div class="val">2 830/2 875</div>
+      <div class="hint">résistance · EV H 2 875</div>
+    </div>
+    <div class="opt-cell key">
+      <div class="label">P/C OI · Vol P/C</div>
+      <div class="val">2,09 / 2,08</div>
+      <div class="hint">PUT DOM. EXTRÊME P/C OI 2,09 - mais contradiction avec flux CHG +324 puts @2 750 (acheteurs soutien)</div>
+    </div>
+  </div>
+
+  <div class="scenarios">
+    <div class="scenario s1">
+      <div class="sc-head"><div class="sc-title">✅ S1 · LONG · Cassure H &gt;2 803,8</div></div>
+      <div class="sc-cond">Buy-stop au-dessus H session · clôture M5 &gt;2 803,8 · volume confirmé · cible EV H 2 875</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">2 815</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">2 830</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">2 855</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 875 (EV H)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&lt; 2 792</div></div>
+    </div>
+    <div class="scenario s2">
+      <div class="sc-head"><div class="sc-title">🚨 S2 · SHORT · Cassure L &lt;2 790,1</div></div>
+      <div class="sc-cond">Sell-stop sous L session · gamma négatif actif · put wall 2 750 actif · cible EV B 2 700</div>
+      <div class="tp-row"><div class="tp-label">TP1</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:40%"></div></div><div class="tp-val">2 775</div></div><div class="tp-row"><div class="tp-label">TP2</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:60%"></div></div><div class="tp-val">2 750</div></div><div class="tp-row"><div class="tp-label">TP3</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:80%"></div></div><div class="tp-val">2 725</div></div><div class="tp-row"><div class="tp-label">TP4</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 700 (EV B)</div></div><div class="tp-row"><div class="tp-label">SL</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">&gt; 2 802</div></div>
+    </div>
+    <div class="scenario s3">
+      <div class="sc-head"><div class="sc-title">⚠️ S3 · RANGE · Consolidation 2 790,1–2 803,8</div></div>
+      <div class="sc-cond">Scalps bas de range (LONG) · Scalps haut de range (SHORT)</div>
+      <div class="tp-row"><div class="tp-label" style="color:#fde68a">LONG</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 790,1 → 2 803,8</div></div><div class="tp-row"><div class="tp-label" style="color:#fde68a">SHORT</div><div class="tp-bar-wrap"><div class="tp-bar" style="width:100%"></div></div><div class="tp-val">2 803,8 → 2 790,1</div></div>
+    </div>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone-cell"><div class="zlabel">POC J-1</div><div class="zval">2 815</div></div>
+    <div class="zone-cell"><div class="zlabel">VAH / VAL J-1</div><div class="zval">2 830 / 2 790</div></div>
+    <div class="zone-cell"><div class="zlabel">Range Prévisionnel</div><div class="zval">2 770 – 2 824</div></div>
+  </div>
+</div>
+
+  <div class="footer">
+    <strong>KAM INC.</strong> · Konda Asset Management · Intraday Futures Desk · Brussels/Paris<br>
+    Document officiel diffusé à l'équipe de traders · Propriété de Déclau<br>
+    <em>Ce document ne constitue pas un conseil en investissement. Gestion : 50% TP1 / 50% TP2, BE dès TP1.</em>
+  </div>
+</div>
+<script>
+function showPanel(sym, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('p-' + sym).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
