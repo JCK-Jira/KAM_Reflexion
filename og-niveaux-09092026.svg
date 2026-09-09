@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0a0d1a"/>
+<line x1="0" y1="0" x2="0" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="60" y1="0" x2="60" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="120" y1="0" x2="120" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="180" y1="0" x2="180" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="240" y1="0" x2="240" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="300" y1="0" x2="300" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="360" y1="0" x2="360" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="420" y1="0" x2="420" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="480" y1="0" x2="480" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="540" y1="0" x2="540" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="600" y1="0" x2="600" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="660" y1="0" x2="660" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="720" y1="0" x2="720" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="780" y1="0" x2="780" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="840" y1="0" x2="840" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="900" y1="0" x2="900" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="960" y1="0" x2="960" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="1020" y1="0" x2="1020" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="1080" y1="0" x2="1080" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<line x1="1140" y1="0" x2="1140" y2="630" stroke="#1e2540" stroke-width="0.5" opacity="0.15"/>
+<rect x="0" y="0" width="6" height="630" fill="#ff8c00"/>
+<text x="48" y="58" font-family="DejaVu Sans, sans-serif" font-size="28" font-weight="700" fill="#e8edf5">Niveaux <tspan fill="#ffaa33">du jour</tspan></text>
+<text x="48" y="86" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="500" fill="#5a6a90" letter-spacing="1.5">MARKET PROFILE · NIVEAUX INSTITUTIONNELS · 9 SEPTEMBRE 2026 · 08H14 CET</text>
+<rect x="1020" y="34" width="140" height="34" fill="#0a1828" stroke="#ff8c00" stroke-width="1.5" rx="3"/>
+<text x="1090" y="56" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#ff8c00" text-anchor="middle" letter-spacing="2">🏛 KAM INC.</text>
+<text x="1160" y="92" font-family="DejaVu Sans Mono, monospace" font-size="11" fill="#3a4870" text-anchor="end" letter-spacing="0.5">DOC · 09/09/2026</text>
+<line x1="40" y1="120" x2="1160" y2="120" stroke="#1e2540" stroke-width="1"/>
+<line x1="40" y1="122" x2="200" y2="122" stroke="#ff8c00" stroke-width="2"/>
+<text x="48" y="155" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="500" fill="#5a6a90" letter-spacing="2">MARKET PROFILE · VALUE AREA · GAMMA PIN · ESPERANCES</text>
+<rect x="40" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="40" y="175" width="180" height="3" fill="#f39b97"/>
+<text x="52" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#1</text>
+<text x="80" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">WTI</text>
+<rect x="142" y="189" width="68" height="20" fill="#f39b97" fill-opacity="0.15" stroke="#f39b97" stroke-width="1" rx="2"/>
+<text x="176" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#f39b97" text-anchor="middle">▼ BAISSIER</text>
+<line x1="52" y1="223" x2="208" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="52" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="52" y="273" font-family="DejaVu Sans Mono, monospace" font-size="26" font-weight="700" fill="#7fb3ff">94,1</text>
+<text x="52" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="52" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">94,44</text>
+<text x="52" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="52" y="375" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="700" fill="#7fb3ff">94,2 – 94,64</text>
+<text x="52" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="52" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">95</text>
+<rect x="52" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="90" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="90" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">95,52</text>
+<rect x="132" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="170" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="170" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#f39b97" text-anchor="middle">92,32</text>
+<rect x="228" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="228" y="175" width="180" height="3" fill="#f39b97"/>
+<text x="240" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#2</text>
+<text x="268" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">GC</text>
+<rect x="330" y="189" width="68" height="20" fill="#f39b97" fill-opacity="0.15" stroke="#f39b97" stroke-width="1" rx="2"/>
+<text x="364" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#f39b97" text-anchor="middle">▼ BAISSIER</text>
+<line x1="240" y1="223" x2="396" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="240" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="240" y="273" font-family="DejaVu Sans Mono, monospace" font-size="26" font-weight="700" fill="#7fb3ff">4 410,5</text>
+<text x="240" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="240" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">4 377,2</text>
+<text x="240" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="240" y="375" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="700" fill="#7fb3ff">4 364 – 4 400,8</text>
+<text x="240" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="240" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">4 500</text>
+<rect x="240" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="278" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="278" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">4 430,2</text>
+<rect x="320" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="358" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="358" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#f39b97" text-anchor="middle">4 320,1</text>
+<rect x="416" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="416" y="175" width="180" height="3" fill="#f39b97"/>
+<text x="428" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#3</text>
+<text x="456" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">ES</text>
+<rect x="518" y="189" width="68" height="20" fill="#f39b97" fill-opacity="0.15" stroke="#f39b97" stroke-width="1" rx="2"/>
+<text x="552" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#f39b97" text-anchor="middle">▼ BAISSIER</text>
+<line x1="428" y1="223" x2="584" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="428" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="428" y="273" font-family="DejaVu Sans Mono, monospace" font-size="26" font-weight="700" fill="#7fb3ff">7 689,25</text>
+<text x="428" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="428" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">7 686</text>
+<text x="428" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="428" y="375" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="700" fill="#7fb3ff">7 681 – 7 689</text>
+<text x="428" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="428" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">8 017,48</text>
+<rect x="428" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="466" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="466" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">7 705,5</text>
+<rect x="508" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="546" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="546" y="497" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#f39b97" text-anchor="middle">7 645,25</text>
+<rect x="604" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="604" y="175" width="180" height="3" fill="#4bda88"/>
+<text x="616" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#4</text>
+<text x="644" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">NQ</text>
+<rect x="706" y="189" width="68" height="20" fill="#4bda88" fill-opacity="0.15" stroke="#4bda88" stroke-width="1" rx="2"/>
+<text x="740" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#4bda88" text-anchor="middle">▲ HAUSSIER</text>
+<line x1="616" y1="223" x2="772" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="616" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="616" y="273" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="700" fill="#7fb3ff">29 622,25</text>
+<text x="616" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="616" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">29 594</text>
+<text x="616" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="616" y="375" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="700" fill="#7fb3ff">29 545 – 29 624</text>
+<text x="616" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="616" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">28 904,54</text>
+<rect x="616" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="654" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="654" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">29 754</text>
+<rect x="696" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="734" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="734" y="497" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#f39b97" text-anchor="middle">29 422,25</text>
+<rect x="792" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="792" y="175" width="180" height="3" fill="#f39b97"/>
+<text x="804" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#5</text>
+<text x="832" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">RTY</text>
+<rect x="894" y="189" width="68" height="20" fill="#f39b97" fill-opacity="0.15" stroke="#f39b97" stroke-width="1" rx="2"/>
+<text x="928" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#f39b97" text-anchor="middle">▼ BAISSIER</text>
+<line x1="804" y1="223" x2="960" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="804" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="804" y="273" font-family="DejaVu Sans Mono, monospace" font-size="26" font-weight="700" fill="#7fb3ff">2 963,6</text>
+<text x="804" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="804" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">2 964,4</text>
+<text x="804" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="804" y="375" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="700" fill="#7fb3ff">2 962,4 – 2 965,6</text>
+<text x="804" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="804" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">3 004,9</text>
+<rect x="804" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="842" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="842" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">2 974,6</text>
+<rect x="884" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="922" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="922" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#f39b97" text-anchor="middle">2 942,9</text>
+<rect x="980" y="175" width="180" height="350" fill="#151c2e" stroke="#24293c" stroke-width="1" rx="4"/>
+<rect x="980" y="175" width="180" height="3" fill="#f39b97"/>
+<text x="992" y="201" font-family="DejaVu Sans Mono, monospace" font-size="11" font-weight="700" fill="#5a6a90">#6</text>
+<text x="1020" y="203" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#e8edf5">YM</text>
+<rect x="1082" y="189" width="68" height="20" fill="#f39b97" fill-opacity="0.15" stroke="#f39b97" stroke-width="1" rx="2"/>
+<text x="1116" y="203" font-family="DejaVu Sans, sans-serif" font-size="10" font-weight="700" fill="#f39b97" text-anchor="middle">▼ BAISSIER</text>
+<line x1="992" y1="223" x2="1148" y2="223" stroke="#1e2540" stroke-width="1"/>
+<text x="992" y="245" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#5a6a90" letter-spacing="1">CPL · 08H14</text>
+<text x="992" y="273" font-family="DejaVu Sans Mono, monospace" font-size="26" font-weight="700" fill="#7fb3ff">52 837</text>
+<text x="992" y="305" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VPOC</text>
+<text x="992" y="325" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#7fb3ff">52 784</text>
+<text x="992" y="355" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#7fb3ff" letter-spacing="1">VALUE AREA</text>
+<text x="992" y="375" font-family="DejaVu Sans Mono, monospace" font-size="14" font-weight="700" fill="#7fb3ff">52 784 – 52 820</text>
+<text x="992" y="403" font-family="DejaVu Sans Mono, monospace" font-size="9" font-weight="600" fill="#dab447" letter-spacing="1">GAMMA PIN</text>
+<text x="992" y="423" font-family="DejaVu Sans Mono, monospace" font-size="16" font-weight="700" fill="#dab447">53 000</text>
+<rect x="992" y="461" width="76" height="50" fill="#042e16" stroke="#4bda88" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="1030" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#4bda88" text-anchor="middle">EV H</text>
+<text x="1030" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#4bda88" text-anchor="middle">53 029</text>
+<rect x="1072" y="461" width="76" height="50" fill="#2d0607" stroke="#f39b97" stroke-width="1" stroke-opacity="0.3" rx="3"/>
+<text x="1110" y="475" font-family="DejaVu Sans Mono, monospace" font-size="8" font-weight="600" fill="#f39b97" text-anchor="middle">EV B</text>
+<text x="1110" y="497" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700" fill="#f39b97" text-anchor="middle">52 559</text>
+<line x1="40" y1="560" x2="1160" y2="560" stroke="#1e2540" stroke-width="1"/>
+<text x="48" y="582" font-family="DejaVu Sans Mono, monospace" font-size="12" font-weight="600" fill="#ffaa33" letter-spacing="1.5">#1 WTI · #2 GC · #3 ES · #4 NQ · #5 RTY · #6 YM</text>
+<text x="48" y="604" font-family="DejaVu Sans, sans-serif" font-size="11" fill="#5a6a90">Bloc prix rafraîchi en séance · bloc gamma figé à l'open interest du jour · Document confidentiel</text>
+<text x="1160" y="582" font-family="DejaVu Sans Mono, monospace" font-size="11" fill="#3a4870" text-anchor="end">09/09/2026 · 08H14 CET</text>
+<text x="1160" y="604" font-family="DejaVu Sans Mono, monospace" font-size="10" fill="#3a4870" text-anchor="end">jck-jira.github.io/KAM_Reflexion</text>
+</svg>
